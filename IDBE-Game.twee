@@ -1,0 +1,60 @@
+:: StoryTitle
+IDBE-Game
+
+
+:: StoryData
+{
+  "ifid": "7F1CC490-7751-4EDD-87A5-5064B8046881",
+  "format": "Harlowe",
+  "format-version": "3.3.5",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Full Story {"position":"300,300","size":"100,100"}
+
+
+
+:: Scenario 1: Orientation {"position":"300,500","size":"100,100"}
+
+
+
+:: Scenario 2: TA {"position":"425,500","size":"100,100"}
+
+
+
+:: Scenario 3: Group Work {"position":"550,500","size":"100,100"}
+
+
+
+:: Scenario 4: Off-Campus {"position":"675,500","size":"100,100"}
+
+
+
+:: Scenario 5: Community {"position":"800,500","size":"100,100"}
+
+
+
+:: Scenario 6: Academic Assistance {"position":"925,500","size":"100,100"}
+
+
+
+:: Scenario 7: CODA {"position":"1050,500","size":"100,100"}
+
+
+
+:: Start {"position":"600,200","size":"100,100"}
+Here we can have a launch point to different scenarios and give testers a preface on how to approach the feedback process. 
+
+(I wonder if there's an easy way to include text input boxes to capture feedback in each node vs just at the end)
+
+[[Full Story]]
+[[Scenario 1: Orientation]]
+[[Scenario 2: TA]]
+[[Scenario 3: Group Work]]
+[[Scenario 4: Off-Campus]]
+[[Scenario 5: Community]]
+[[Scenario 6: Academic Assistance]]
+[[Scenario 7: CODA]]
+
