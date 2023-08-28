@@ -2,7 +2,21 @@
 
 Repository of Twine source files for Tandon IDBE Game.
 
-## How to Download Story
+## Current Versions
+
+- *IDBE Game_Twine* is the story-only version of the first three scenarios.
+- *v2_Backend* is the above with the added sheet logging and feedback interface.
+
+## TODO
+
+- [ ] Glitch Project Site Live
+- [ ] QR Code // Bit.ly
+- [ ] Sheet Logging
+- [ ] Feedback Buttons
+
+## Old Instructions
+
+### How to Download Story
 
 1. Click on the green `<> Code` button to the top right, and download the .zip.
 2. Go to [the Twine browser site](https://twinery.org/2/#/).
@@ -12,7 +26,7 @@ Repository of Twine source files for Tandon IDBE Game.
 
 *To quickly share a non-editable version of the story just for reading, **you can send the `IDBE-Game.html` file** to anyone. Opening that file will allow them to play through the story without needing to mess with Git or the Twine site.*
 
-## How to Update Changes
+### How to Update Changes
 
 1. Edit the story/nodes in your Twine browser.
 2. When you're done making changes, from within the story on the Twine browser, go to the **Build** tab on the top left, and select **Export as Twee**.
