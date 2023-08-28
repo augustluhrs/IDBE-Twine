@@ -9,10 +9,12 @@ Repository of Twine source files for Tandon IDBE Game.
 
 ## TODO
 
+- [ ] Instructions for Readers at Start
 - [ ] Glitch Project Site Live
 - [ ] QR Code // Bit.ly
 - [ ] Sheet Logging
 - [ ] Feedback Buttons
+- [ ] Load Game at Start if Cookies Exist
 
 ## Old Instructions
 
