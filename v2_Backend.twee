@@ -14,20 +14,64 @@ v2_Backend
 
 :: StoryScript [script]
 
-// if (!window.harlowe){
-// 	window.harlowe = {"State": State};
-// }
+
+:: PostToSheet
+(set: $date to (current-date:))
+(set: $time to (current-time:))
+(set: $path to (history:))
+<script>
+  //using "display" macro hack since global functions don't really work in Harlowe
+  fetch('https://sheetdb.io/api/v1/czosjrv1cseoi?sheet=StudentLogs', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin' //TODO remove this and add new token to .env on glitch
+    },
+    body: JSON.stringify({
+      data: [
+        {
+          'NETID': $netID,
+          'NAME': $name,
+          'DATE': $date,
+          'START': $startTime,
+          'TIME': $time,
+          'PATH': $path,
+          'FEEDBACK': $feedback
+        }
+      ]
+    })
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+</script>
+
+:: UpdateSheet
+(set: $time to (current-time:))
+(set: $path to (history:))
+<script>
+  //using "display" macro hack since global functions don't really work in Harlowe
+  fetch(`https://sheetdb.io/api/v1/czosjrv1cseoi/NETID/${$netID}?sheet=StudentLogs`, {
+    method: 'PATCH',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin' //TODO remove this and add new token to .env on glitch
+    },
+    body: JSON.stringify({
+      data: 
+      {
+        'TIME': $time,
+        'PATH': $path,
+        'FEEDBACK': $feedback
+      }
+    })
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+</script>
 
 :: 1 {"position":"575,700","size":"100,100"}
-
-<!-- DB CODE START -->
-(set: $path to (history:))
-
-<script>
-console.log($date);
-console.log($path);
-</script>
-<!-- DB CODE END -->
 
 ILSI: Looking for something?
 
@@ -234,6 +278,9 @@ ALKA (sighs): [[I don’t know, either.->20]]
 
 
 :: 2 {"position":"575,825","size":"100,100"}
+<!-- DB CODE START -->
+(display: "UpdateSheet")
+<!-- DB CODE END -->
 ILSI’S ROOMMATE: Ilsi! There you are!
 
 ILSI (text-colour:grey)[(to roommate)]: Oh hey!
@@ -1494,53 +1541,17 @@ ALKA: I guess...
 <!-- DB CODE START -->
 (set: $date to (current-date:))
 (set: $time to (current-time:))
+(set: $startTime to (current-time:))
 (set: $path to (history:))
 (if: $feedback is 0)[(set: $feedback to (a:))]
-
-<script>
-
-</script>
 <!-- DB CODE END -->
 
 Thank you for testing this interactive narrative! 
 Your participation and feedback will help us make this a great game.
 
-<!-- SAVE // LOAD 
-(if: (saved-games:) contains "Save A" )[
-  (set: _save to (saved-games:)'s "Save A")
-  (set: _sg to (saved-games:))
-  <script>
-  console.log(_save);
-  console.log(_sg);
-
-  </script>
-  (if: $loadedOnce is false or $loadedOnce is 0)[
-    (set: $loadedOnce to true)
-    (load-game: "Save A")
-  ]
-  Welcome back, (print: "name" of $playerData)!
-  
-  Would you like to (link: "pick up where you left off")[] in the story?
-  <!-- goto: last in path array
-  Or do you want to (link: "start over")[
-    <script>
-    localStorage.clear(); //clears saves
-    location.reload(); //refreshes page (note: will erase story if using twine online editor)
-    </script>
-  ]?
-]
-(else:)[
-  (set: $playerData to (dm: "name", "", "netID", ""))
-  Please enter the following information:
-  Name: (input: bind $playerData's "name", "your name")
-  NetID: (input: bind $playerData's "netID", "your netID")
-
-]
--->
-(set: $playerData to (dm: "name", "", "netID", ""))
-  Please enter the following information:
-  Name: (input: bind $name, "your name")
-  NetID: (input: bind $netID, "your netID")
+Please enter the following information:
+Name: (input: bind $name, "your name")
+NetID: (input: bind $netID, "your netID")
 
 
 {
@@ -1764,48 +1775,7 @@ Male, 52, Indian-American, Alka's dad
 :: S0-ORIENTATION {"position":"575,575","size":"100,100"}
 
 <!-- DB CODE START -->
-<!-- (set: $loadedOnce to false) -->
-<!--
-(if: (save-game: "Save A"))[
-  <script>
-  console.log("game saved successfully");
-  </script>
-](else:)[
-  <script>
-  console.log("error in saving game");
-  </script>
-]
--->
-(set: $path to (history:))
-<script>
-console.log($path);
-console.log($name);
-console.log($netID);
-console.log($feedback);
-fetch('https://sheetdb.io/api/v1/czosjrv1cseoi?sheet=StudentLogs', {
-  method: 'POST',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin'
-  },
-  body: JSON.stringify({
-    data: [
-      {
-        'NETID': $netID,
-        'NAME': $name,
-        'DATE': $date,
-        'TIME': $time,
-        'PATH': $path,
-        'FEEDBACK': $feedback
-      }
-    ]
-  })
-})
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-</script>
+(display: "PostToSheet")
 <!-- DB CODE END -->
 
 
