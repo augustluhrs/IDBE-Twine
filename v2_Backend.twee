@@ -12,7 +12,23 @@ v2_Backend
 }
 
 
+:: StoryScript [script]
+
+// if (!window.harlowe){
+// 	window.harlowe = {"State": State};
+// }
+
 :: 1 {"position":"575,700","size":"100,100"}
+
+<!-- DB CODE START -->
+(set: $path to (history:))
+
+<script>
+console.log($date);
+console.log($path);
+</script>
+<!-- DB CODE END -->
+
 ILSI: Looking for something?
 
 JENN: Oh, thank you so much, yes! I’m looking for this place.
@@ -1475,14 +1491,72 @@ ALKA: I guess...
 
 :: INTRO {"position":"425,575","size":"100,100"}
 
-The  current date is (current-date:) (current-time:)
+<!-- DB CODE START -->
+(set: $date to (current-date:))
+(set: $time to (current-time:))
+(set: $path to (history:))
+(if: $feedback is 0)[(set: $feedback to (a:))]
 
 <script>
-console.log();
+
 </script>
+<!-- DB CODE END -->
 
-[[S0-ORIENTATION]] 
+Thank you for testing this interactive narrative! 
+Your participation and feedback will help us make this a great game.
 
+<!-- SAVE // LOAD 
+(if: (saved-games:) contains "Save A" )[
+  (set: _save to (saved-games:)'s "Save A")
+  (set: _sg to (saved-games:))
+  <script>
+  console.log(_save);
+  console.log(_sg);
+
+  </script>
+  (if: $loadedOnce is false or $loadedOnce is 0)[
+    (set: $loadedOnce to true)
+    (load-game: "Save A")
+  ]
+  Welcome back, (print: "name" of $playerData)!
+  
+  Would you like to (link: "pick up where you left off")[] in the story?
+  <!-- goto: last in path array
+  Or do you want to (link: "start over")[
+    <script>
+    localStorage.clear(); //clears saves
+    location.reload(); //refreshes page (note: will erase story if using twine online editor)
+    </script>
+  ]?
+]
+(else:)[
+  (set: $playerData to (dm: "name", "", "netID", ""))
+  Please enter the following information:
+  Name: (input: bind $playerData's "name", "your name")
+  NetID: (input: bind $playerData's "netID", "your netID")
+
+]
+-->
+(set: $playerData to (dm: "name", "", "netID", ""))
+  Please enter the following information:
+  Name: (input: bind $name, "your name")
+  NetID: (input: bind $netID, "your netID")
+
+
+{
+There will be a feedback form you can fill out after 
+you read through these three scenarios,
+but you can also provide short feedback via the buttons 
+at the bottom of each page. These buttons are totally optional, but
+can be used for small notes that you don't want to forget, 
+or for general vibe checks that will automatically be linked 
+to that specific part of the story.
+}
+
+{
+To go to the next page, or to choose between different paths 
+at branching points in the story, click the [[blue text ->S0-ORIENTATION]].
+}
 
 :: OFF_C1A {"position":"1350,7200","size":"100,100"}
 CARL: Oh, no - I think I’m good. Thanks, though.
@@ -1688,6 +1762,53 @@ Male, 52, Indian-American, Alka's dad
 
 
 :: S0-ORIENTATION {"position":"575,575","size":"100,100"}
+
+<!-- DB CODE START -->
+<!-- (set: $loadedOnce to false) -->
+<!--
+(if: (save-game: "Save A"))[
+  <script>
+  console.log("game saved successfully");
+  </script>
+](else:)[
+  <script>
+  console.log("error in saving game");
+  </script>
+]
+-->
+(set: $path to (history:))
+<script>
+console.log($path);
+console.log($name);
+console.log($netID);
+console.log($feedback);
+fetch('https://sheetdb.io/api/v1/czosjrv1cseoi?sheet=StudentLogs', {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin'
+  },
+  body: JSON.stringify({
+    data: [
+      {
+        'NETID': $netID,
+        'NAME': $name,
+        'DATE': $date,
+        'TIME': $time,
+        'PATH': $path,
+        'FEEDBACK': $feedback
+      }
+    ]
+  })
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+</script>
+<!-- DB CODE END -->
+
+
 We can hear the noisy bustle of an open area filled with people.
 
 Banners reading “WELCOME, NEW STUDENTS!” hang on every
