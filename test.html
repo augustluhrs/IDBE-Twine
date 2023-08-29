@@ -1229,20 +1229,17 @@ ALKA: I guess...
 (set: $date to (current-date:))
 (set: $time to (current-time:))
 (set: $path to (history:))
+(if: $feedback is 0)[(set: $feedback to (a:))]
 
 &lt;script&gt;
-console.log($date);
-console.log($path);
 
-// window.harlowe = {&quot;State&quot;: State};
 &lt;/script&gt;
 &lt;!-- DB CODE END --&gt;
 
 Thank you for testing this interactive narrative! 
 Your participation and feedback will help us make this a great game.
 
-&lt;!-- SAVE // LOAD --&gt;
-
+&lt;!-- SAVE // LOAD 
 (if: (saved-games:) contains &quot;Save A&quot; )[
   (set: _save to (saved-games:)&#39;s &quot;Save A&quot;)
   (set: _sg to (saved-games:))
@@ -1258,7 +1255,7 @@ Your participation and feedback will help us make this a great game.
   Welcome back, (print: &quot;name&quot; of $playerData)!
   
   Would you like to (link: &quot;pick up where you left off&quot;)[] in the story?
-  &lt;!-- goto: last in path array--&gt;
+  &lt;!-- goto: last in path array
   Or do you want to (link: &quot;start over&quot;)[
     &lt;script&gt;
     localStorage.clear(); //clears saves
@@ -1273,6 +1270,12 @@ Your participation and feedback will help us make this a great game.
   NetID: (input: bind $playerData&#39;s &quot;netID&quot;, &quot;your netID&quot;)
 
 ]
+--&gt;
+(set: $playerData to (dm: &quot;name&quot;, &quot;&quot;, &quot;netID&quot;, &quot;&quot;))
+  Please enter the following information:
+  Name: (input: bind $name, &quot;your name&quot;)
+  NetID: (input: bind $netID, &quot;your netID&quot;)
+
 
 {
 There will be a feedback form you can fill out after 
@@ -1286,7 +1289,7 @@ to that specific part of the story.
 
 {
 To go to the next page, or to choose between different paths 
-at branching points in the story, click the ([[blue text -&gt;S0-ORIENTATION]].
+at branching points in the story, click the [[blue text -&gt;S0-ORIENTATION]].
 }</tw-passagedata><tw-passagedata pid="66" name="OFF_C1A" tags="" position="1350,7200" size="100,100">CARL: Oh, no - I think I’m good. Thanks, though.
 
 They start walking away from the turnstile and approach the booth for help, but when they get there they discover that it’s empty.
@@ -1455,8 +1458,8 @@ PRAKESH
 Male, 52, Indian-American, Alka&#39;s dad
 
 [[ACT ONE-&gt;S1-TA]]</tw-passagedata><tw-passagedata pid="75" name="S0-ORIENTATION" tags="" position="575,575" size="100,100">&lt;!-- DB CODE START --&gt;
-(set: $loadedOnce to false)
-(set: $path to (history:))
+&lt;!-- (set: $loadedOnce to false) --&gt;
+&lt;!--
 (if: (save-game: &quot;Save A&quot;))[
   &lt;script&gt;
   console.log(&quot;game saved successfully&quot;);
@@ -1466,10 +1469,36 @@ Male, 52, Indian-American, Alka&#39;s dad
   console.log(&quot;error in saving game&quot;);
   &lt;/script&gt;
 ]
-
+--&gt;
+(set: $path to (history:))
 &lt;script&gt;
-console.log($date);
 console.log($path);
+console.log($name);
+console.log($netID);
+console.log($feedback);
+fetch(&#39;https://sheetdb.io/api/v1/czosjrv1cseoi?sheet=StudentLogs&#39;, {
+  method: &#39;POST&#39;,
+  headers: {
+    &#39;Accept&#39;: &#39;application/json&#39;,
+    &#39;Content-Type&#39;: &#39;application/json&#39;,
+    &#39;Authorization&#39;: &#39;Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin&#39;
+  },
+  body: JSON.stringify({
+    data: [
+      {
+        &#39;NETID&#39;: $netID,
+        &#39;NAME&#39;: $name,
+        &#39;DATE&#39;: $date,
+        &#39;TIME&#39;: $time,
+        &#39;PATH&#39;: $path,
+        &#39;FEEDBACK&#39;: $feedback
+      }
+    ]
+  })
+})
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; console.log(data));
+
 &lt;/script&gt;
 &lt;!-- DB CODE END --&gt;
 
