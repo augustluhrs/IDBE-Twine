@@ -72,9 +72,23 @@ IDBE Twine Test
     .then((data) => console.log(data));
 </script>
 
-:: Footer[footer]
 
-<!-- Test -->
+:: Footer[footer]
+<p>
+<hr>
+(checkbox: bind _liked, "I really like this passage")
+(checkbox: bind _disliked, "I don't like this passage")
+(checkbox: bind _confused, "I'm confused")
+(checkbox: bind _other, "I have a short comment (write a note)")
+[(input-box: bind $comment)]<note|
+(live: 0.1s)[
+  (if: _other is true)[(show: ?note)]
+  (else:)[(hide: ?note)]
+]
+
+<script>
+// console.log(_other);
+</script>
 
 :: 1 {"position":"575,700","size":"100,100"}
 
@@ -90,7 +104,16 @@ JENN: Thank you! What year are you in?
 
 ILSI: I’m actually a freshman, too. But both my parents are alumni, so I pretty much grew up here and around Washington Square.
 
-JENN: That’s so cool! [[My name is-->2]]
+JENN: That’s so cool! (link: "My name is...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "2")
+]
 
 
 :: 10 {"position":"575,1825","size":"100,100"}
@@ -128,7 +151,16 @@ ALKA: Tibetan food sounds interesting. Carl, wanna go?
 
 CARL (text-colour:grey)[(seeing Alka want to go)]: Ugh... okay...
 
-Then Jenn notices a girl sitting a few rows back: Ilsi, who helped Jenn earlier, [[is right there.->11]]
+Then Jenn notices a girl sitting a few rows back: Ilsi, who helped Jenn earlier, (link: "is right there.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "11")
+]
 
 
 :: 11 {"position":"575,1950","size":"100,100"}
@@ -144,12 +176,30 @@ ILSI (text-colour:grey)[(doesn’t actually know Jenn’s name)]: Oh, hey... you
 
 Lights come up on the stage. An NYU welcome ambassador approaches the podium.
 
-AMBASSADOR: Good morning, students! [[Welcome to...->12]]
+AMBASSADOR: Good morning, students! (link: "Welcome to...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "12")
+]
 
 
 :: 12 {"position":"575,2075","size":"100,100"}
 =><= 
-[[''''Spaces of Possibility''''->OPENING-CREDITS]]
+(link: "''''Spaces of Possibility''''")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OPENING-CREDITS")
+]
 
 
 :: 13 {"position":"800,2325","size":"100,100"}
@@ -170,7 +220,16 @@ JOSH: Interesting choice!
 
 (text-colour:grey)[(addressing Yinan)]: Yeen-an! What do you think? Is Jenn right to switch? And if so, why?
 
-[[Next->14]]
+(link: "Next")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "14")
+]
 
 
 :: 14 {"position":"800,2450","size":"100,100"}
@@ -184,9 +243,27 @@ JENN (text-colour:grey)[(leaning towards Yinan, whispering)]: I think he’s tal
 
 We linger on Yinan looking at Jenn with confusion - then she visibly realizes that //she’s// “Yin-an.”
 
-[[Yinan firmly brings it up now->TA-C1a]]
+(link: "Yinan firmly brings it up now")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "TA-C1A")
+]
 
-[[Yinan frowns and resolves to bring it up privately later->TA-C1b]]
+(link: "Yinan frowns and resolves to bring it up privately later")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "TA-C1B")
+]
 
 
 :: 15 {"position":"800,2700","size":"100,100"}
@@ -204,7 +281,16 @@ JOSH: Daniel!
 The students lower their hands, and a male student (Daniel)
 goes to speak...
 
-[[Fast forward a week later->16]]
+(link: "Fast forward to a week later")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "16")
+]
 
 
 :: 16 {"position":"800,2825","size":"100,100"}
@@ -214,7 +300,16 @@ Yinan and noticeably fewer students raise their hands this time. Josh scans for 
 
 JOSH: Brianna!
 
-[[Fast forward another week->17]]
+(link: "Fast forward another week")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "17")
+]
 
 
 :: 17 {"position":"800,2950","size":"100,100"}
@@ -227,7 +322,16 @@ their hands...
 
 JOSH: Marcus!
 
-[[...and the next week's class->18]]
+(link: "...and the next week's class")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "18")
+]
 
 
 :: 18 {"position":"800,3075","size":"100,100"}
@@ -258,7 +362,16 @@ ALKA (text-color:grey)[(to Josh, more confidently)]: It’s missing an f for the
 
 JOSH: Great, let’s see what happens when we put that in...
 
-[[After Class->19]]
+(link: "After Class")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "19")
+]
 
 
 :: 19 {"position":"800,3200","size":"100,100"}
@@ -274,7 +387,16 @@ ALKA: I’m a bit concerned about Yinan...
 
 JENN: Me, too. But I don’t know if we should say anything?
 
-ALKA (text-color:grey)[(sighs)]: [[I don’t know, either.->20]]
+ALKA (text-color:grey)[(sighs)]: (link: "I don't know either.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "20")
+]
 
 
 :: 2 {"position":"575,825","size":"100,100"}
@@ -291,13 +413,31 @@ JENN (text-colour:grey)[(to self)]: Bye Ilsi, I’m Jenn...
 
 Alone again, Jenn watches other students and New Yorkers passing by, all of them laughing and talking in pairs and small groups.
 
-JENN: How does everyone have friends already?? (text-colour:grey)[(sigh)] [[Commuting sucks...->3]]
+JENN: How does everyone have friends already?? (text-colour:grey)[(sigh)] (link: "Commuting sucks...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "3")
+]
 
 
 :: 20 {"position":"800,3325","size":"100,100"}
 In her dorm room, Yinan opens Albert on her computer to check her midterm grade. She got an A-, and she’s not thrilled about it. She shakes her head and opens her school email. There is an email from Josh waiting for her with //"Midterm Grade Breakdown - Yinan"// in the subject line.
 
-[[She clicks open the email...->21]]
+(link: "She clicks open the email...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "21")
+]
 
 
 :: 21 {"position":"800,3450","size":"100,100"}
@@ -335,7 +475,16 @@ CARL: What’s been going on with Yinan?
 
 Alka and Jenn sigh.
 
-JENN: [[So...->22]]
+JENN: (link: "So...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "22")
+]
 
 
 :: 22 {"position":"800,3575","size":"100,100"}
@@ -347,7 +496,16 @@ ALKA: Yeah, same...
 
 CARL: So what about doing something now?
 
-[[The next day->23]]
+(link: "The next day")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "23")
+]
 
 
 :: 23 {"position":"800,3700","size":"100,100"}
@@ -381,7 +539,16 @@ YINAN (text-colour:grey)[(smiles)]: Right? Thanks for the validation.
 
 KEVIN: You’re welcome!
 
-[[Later, in Yinan's dorm room...->24]]
+(link: "Later, in Yinan's dorm room")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "24")
+]
 
 
 :: 24 {"position":"800,3825","size":"100,100"}
@@ -428,7 +595,16 @@ JENN: Wait, really?
 
 CARL: Yep.
 
-YINAN: You know what? I would love to [[talk to her.->25]]
+YINAN: You know what? I would love to (link: "talk to her.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "25")
+]
 
 
 :: 25 {"position":"800,3950","size":"100,100"}
@@ -462,7 +638,16 @@ ISAAC: Oh, okay...thanks.
 
 Isaac leaves, clearly annoyed. Alanna watches him and exhales once he’s gone.
 
-[[Later at the cafe->26]]
+(link: "Later at the cafe")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "26")
+]
 
 
 :: 26 {"position":"800,4075","size":"100,100"}
@@ -474,9 +659,27 @@ YINAN: Only my friends.
 
 Alanna thinks about Yinan’s reason and says...
 
-[[”What about your academic advisor?”->TA-C2a]]
+(link: "What about your academic advisor?")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "TA-C2A")
+]
 
-[[”The professor can be a good resource."->TA-C2b]]
+(link: "The professor can be a good resource.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "TA-C2B")
+]
 
 
 :: 27 {"position":"800,4325","size":"100,100"}
@@ -536,8 +739,16 @@ JOSH: I suggest you take Alanna's advice. Fix the code.
 ISAAC (text-colour:grey)[(chastened)]: Okay. I will. Thank you.
 
 Josh watches Isaac leave with a perplexed expression, makes his coffee and goes back to his desk. Gabriel pokes his head out of the office room. He looks equally perplexed.
-
-[[Next->28]]
+(link: "Next")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "28")
+]
 
 
 :: 28 {"position":"800,4450","size":"100,100"}
@@ -573,7 +784,16 @@ GABRIEL: You’re welcome! And you know, if you’d like to talk about this stuf
 
 ALANNA: Thank you.
 
-[[Josh enters the room as Gabriel leaves->29]]
+(link: "Josh enters the room as Gabriel leaves")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "29")
+]
 
 
 :: 29 {"position":"800,4575","size":"100,100"}
@@ -610,7 +830,16 @@ JOSH (text-color:grey)[(uncomfortable, knowing where this is heading)]: I do, ye
 
 ALANNA: Because I had a student approach me with some concerns...
 
-[[END OF ACT ONE. ON TO ACT II.->S2-GROUPWORK]]
+(link: "END OF ACT ONE. ON TO ACT II.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "S2-GROUPWORK")
+]
 
 
 :: 3 {"position":"575,950","size":"100,100"}
@@ -620,7 +849,16 @@ A student enters Jenn’s aisle and she immediately brightens, smiling and wavin
 
 JENN: Hi! Feel free to sit here!
 
-But the student doesn’t notice her and walks straight down the aisle, greeting another student. Jenn watches them with [[an awkward expression.->4]]
+But the student doesn’t notice her and walks straight down the aisle, greeting another student. Jenn watches them with (link: "an awkward expression.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "4")
+]
 
 
 :: 30 {"position":"1050,4700","size":"100,100"}
@@ -630,7 +868,16 @@ ALKA: It's going good, Papa. There's a lot of work, but I'm managing.
 
 PRAKESH (text-color:grey)[(squinting and leaning in)]: Is that your violin on your shoulder, Alka?
 
-ALKA: Yeah, Papa. I was just jamming with some [[friends->31]].
+ALKA: Yeah, Papa. I was just jamming with some (link: "friends")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "31")
+]
 
 
 :: 31 {"position":"1050,4825","size":"100,100"}
@@ -642,7 +889,16 @@ PRAKESH: I hope you aren’t letting all this  fun distract you from your studie
 
 ALKA (text-color:grey)[(aiming his phone camera back at his face)]: Sorry, Papa, I stumbled. I was going to say the jamming is actually somewhat related to my studies - I’m working on a group project where we have to design a new kind of musical instrument. So this... jamming, it gives me ideas.
 
-Prakesh nods, looking thoughtful and reassured. Just then, Alka passes by an ELEVATOR leading to the subway station. A sign taped to it reads 'OUT OF ORDER'. Alka notices a wheelchair-bound man at the top of the nearby stairs leading to the subway. A good samaritan stands with her hands on the handlebars to the man’s wheelchair looking anxious and scanning the crowd, obviously searching for someone to [[help->32]].
+Prakesh nods, looking thoughtful and reassured. Just then, Alka passes by an ELEVATOR leading to the subway station. A sign taped to it reads 'OUT OF ORDER'. Alka notices a wheelchair-bound man at the top of the nearby stairs leading to the subway. A good samaritan stands with her hands on the handlebars to the man’s wheelchair looking anxious and scanning the crowd, obviously searching for someone to (link: "help")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "32")
+]
 
 
 :: 32 {"position":"1050,4950","size":"100,100"}
@@ -655,8 +911,16 @@ PRAKESH: Of course, son. We'll talk later.
 
 Alka ends the call, slides his phone into his pocket, and rushes over to offer his assistance.
 
-[[Later, on the Herald Sq subway platform->33]]
-
+(link: "Later, on the Herald Square subway platform")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "33")
+]
 
 :: 33 {"position":"1050,5075","size":"100,100"}
 Alka stands on the subway platform, still wearing his violin case on his shoulder. He's lost in thought with his eyes closed, perhaps reliving the joy of his jamming session.
@@ -669,7 +933,16 @@ The man and Alka exchange a smile. The man then points up at the musical instrum
 
 Alka sees this. An idea sparking in his eyes, he retrieves a notebook and a pen from his violin case. He starts to sketch, the notes of REACH providing a soundtrack to his inspiration. As Alka gets more and more engrossed in his design, we...
 
-[[See, later, in Dibner Library...->34]]
+(link: "See, later, in Dibner Library")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "34")
+]
 
 
 :: 34 {"position":"1050,5200","size":"100,100"}
@@ -682,7 +955,16 @@ Eye tracking interface
 Photosensor
 Ultrasonic sensor]
 
-[[The group sadly sits there->35]]
+(link: "The group sadly sits there")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "35")
+]
 
 
 :: 35 {"position":"1050,5325","size":"100,100"}
@@ -714,9 +996,27 @@ ILSI: You don’t have to vote for him just because he’s your roommate.
 
 Time to make a decision.
 
-[[Alka: ”Let’s just do the ultrasonic sensor thing”->GRP-C1A]]
+(link: "ALKA: Let's just do the ultrasonic sensor thing.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "GRP-C1A")
+]
 
-[[Alka: ”What do you think we should do instead?”->GRP-C1B]]
+(link: "ALKA: What do you think we should do instead?")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "GRP-C1B")
+]
 
 
 :: 36 {"position":"1050,5575","size":"100,100"}
@@ -741,9 +1041,27 @@ ALKA: I was just trying to help the group get this thing done, for all of us.
 YINAN: Okay, but I thought we were going to talk about how to approach it today.
 (Shows a folder of drawings) I came up with a bunch of designs I thought we could discuss.
 
-[[ALKA: ”I don’t think we want to get too crazy with designs. Let me play mine for you.”->GRP-C2A]]
+(link: "ALKA: I don't think we want to get too crazy with designs. Let me play mine for you.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "GRP-C2A")
+]
 
-[[ALKA: ”Maybe we can combine your ideas with what I built. Can I show you how it works?”->GRP-C2B]]
+(link: "ALKA: Maybe we can combine your ideas with what I built. Can I show you how it works?")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "GRP-C2B")
+]
 
 
 :: 37 {"position":"1050,5825","size":"100,100"}
@@ -824,7 +1142,16 @@ ILSI: I’m not sure yet. Could I see the code? Maybe we can tweak it a bit.
 
 ALKA: Tweak it? You know what? Fine, I’ll post it on GitHub. If you can find anything that needs tweaking in my code, let me know.
 
-[[At Dibner library the next day...->38]]
+(link: "At Dibner library the next day...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "38")
+]
 
 
 :: 38 {"position":"1050,5950","size":"100,100"}
@@ -840,7 +1167,16 @@ YINAN: So you couldn’t really sound bad! We could make it so you just turn a c
 
 ILSI: Yes, perfect! Let’s add it in!
 
-[[In Alka and Carl's dorm room...->39]]
+(link: "In Alka and Carl's dorm room...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "39")
+]
 
 
 :: 39 {"position":"1050,6075","size":"100,100"}
@@ -857,9 +1193,27 @@ CARL: You can always revert? (off Alka, opening GitHub)...what are you doing?
 
 Alka types Yinan and Ilsi’s usernames into the ‘block a user’ field on GitHub, and pauses:
 
-[[”I’ll tell you in a sec.”->GRP-C3A]]
+(link: "I'll tell you in a sec.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "GRP-C3A")
+]
 
-[[”I’m blocking them.”->GRP-C3B]]
+(link: "I'm blocking them.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "GRP-C3B")
+]
 
 
 :: 4 {"position":"575,1075","size":"100,100"}
@@ -873,7 +1227,16 @@ JENN: Hi! This seat isn’t taken! I’m Jenn!
 
 Jenn gestures at the seat next to her.
 
-YINAN (text-colour:grey)[(not sure why Jenn is so hyped up)]: [[Oh, thanks.->5]]
+YINAN (text-colour:grey)[(not sure why Jenn is so hyped up)]: (link: "Oh, thanks.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "5")
+]
 
 
 :: 40 {"position":"1050,6325","size":"100,100"}
@@ -901,7 +1264,16 @@ But just then, Ilsi and Yinan’s phones buzz. Ilsi checks hers, and:
 
 ILSI: Wait, don’t send that - Carl said he spoke to Alka and they want us to meet at the MakerSpace.
 
-[[At the Makerspace->42]]
+(link: "At the Makerspace")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "42")
+]
 
 
 :: 41 {"position":"1200,6325","size":"100,100"}
@@ -927,7 +1299,16 @@ ALKA (a bit sheepish): Hey, thanks for slowing me down there. I think I was abou
 
 CARL: Don’t worry about it - and thanks for hearing me out. Let's go meet them.
 
-[[At the Makerspace->43]]
+(link: "At the Makerspace")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "43")
+]
 
 
 :: 42 {"position":"1050,6450","size":"100,100"}
@@ -953,7 +1334,16 @@ ILSI: Okay. I think we can all do a much better job working together and get a r
 
 YINAN: Yeah. Let's try tinkering around with this now and make it work!
 
-[[At the Makerspace->43]]
+(link: "At the Makerspace")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "43")
+]
 
 
 :: 43 {"position":"1050,6575","size":"100,100"}
@@ -991,7 +1381,16 @@ YINAN: Yessss!
 
 As our friends congratulate Carl and each other, we...
 
-[[END ACT II. NEXT, ACT III...->S3-OFFCAMPUS]]
+(link: "END ACT II. NEXT, ACT III...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "S3-OFFCAMPUS")
+]
 
 
 :: 44 {"position":"1350,6700","size":"100,100"}
@@ -1031,7 +1430,16 @@ CARL: Maybe they’re showing off?
 
 ALANNA (text-color:grey)[(frowning at her screen)]: Efficiency is a show-off in coding, not verbosity. I’ll have to note that down -
 
-Suddenly, a soft, fuzzy, day-glo tennis ball rolls over and bumps Carl’s knee. A nine year old girl is standing fifteen feet away with a Velcro catch paddle on her hand, her DAD standing further back with his own [[paddle.->45]]
+Suddenly, a soft, fuzzy, day-glo tennis ball rolls over and bumps Carl’s knee. A nine year old girl is standing fifteen feet away with a Velcro catch paddle on her hand, her DAD standing further back with his own (link: "paddle.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "45")
+]
 
 
 :: 45 {"position":"1350,6825","size":"100,100"}
@@ -1075,7 +1483,16 @@ CARL: For sure.
 
 Carl packs everything into their backpack, plugs their airpods in, chooses their favorite playlist on Spotify, and sets off for school, waving goodbye to Alanna.
 
-[[Moments later, at the 59th St. Station turnstile->46]]
+(link: "Moments later, at the 59th St. Station turnstile")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "46")
+]
 
 
 :: 46 {"position":"1350,6950","size":"100,100"}
@@ -1088,7 +1505,16 @@ Carl groans. They go to the Metrocard ATM and tap the $9 Fast Metrocard option. 
 
 (text-colour:orange)[SWIPE CARD AGAIN AT THIS TURNSTILE]
 
-CARL: [[Okayyy...->47]]
+CARL: (link: "Okayyy...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "47")
+]
 
 
 :: 47 {"position":"1350,7075","size":"100,100"}
@@ -1104,9 +1530,27 @@ LADY: Need some help?
 
 She’s holding the emergency gate open for Carl.
 
-[[CARL: ”Oh, no - I think I’m good.”->OFF-C1A]]
+(link: "CARL: Oh, no - I think I'm good.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C1A")
+]
 
-[[CARL: ”Thank you so much!”->OFF-C1B]]
+(link: "CARL: Thank you so much!")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C1B")
+]
 
 
 :: 48 {"position":"1350,7325","size":"100,100"}
@@ -1150,7 +1594,16 @@ LADY: Sorry...
 
 As she scurries away, Carl looks around the station and sees people staring at them, as their heart pounds away.
 
-[[Minutes later...->49]]
+(link: "Minutes later...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "49")
+]
 
 
 :: 49 {"position":"1350,7450","size":"100,100"}
@@ -1158,7 +1611,16 @@ Carl is squeezed into a packed car, standing and rocking with the motion of the 
 
 CARL: Un-f@#&ing-believable...
 
-[[At the Jay St.-Metrotech Station->50]]
+(link: "At the Jay St.-Metrotech Station")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "50")
+]
 
 
 :: 5 {"position":"575,1200","size":"100,100"}
@@ -1172,7 +1634,16 @@ YINAN: I’m Yinan.
 
 JENN: Hi Yinan!
 
-Two more students, Alka and Carl, come and sit down in between [[Jenn and Yinan.->6]]
+Two more students, Alka and Carl, come and sit down in between (link: "Jenn and Yinan.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "6")
+]
 
 
 :: 50 {"position":"1350,7575","size":"100,100"}
@@ -1185,13 +1656,31 @@ And there’s a text notification from Kevin (saved in Carl’s contacts as Kevi
 
 (text-colour:orange)[wya?
 ]
-[[Exiting the Station->51]]
+(link: "Exiting the Station")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "51")
+]
 
 
 :: 51 {"position":"1350,7700","size":"100,100"}
 As Carl exits the station, a white male pedestrian crosses our path and makes “white face” at Carl (tight, closed-mouth smile with raised eyebrows)...
 
-[[In front of the Jacobs building...->52]]
+(link: "In front of the Jacobs building")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "52")
+]
 
 
 :: 52 {"position":"1350,7825","size":"100,100"}
@@ -1199,9 +1688,27 @@ As we approach the front door of the building, Carl checks their phone again...
 
 (text-colour:orange)[2:40 PM]
 
-[[CARL: ”Ugh, I’ll have to slide in late to class”->OFF-C2A]]
+(link: "CARL: Ugh, I'll have to slide in late to class")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C2A")
+]
 
-[[CARL: ”Forget it, I’ll skip class today”->OFF-C2B]]
+(link: "CARL: Forget it, I'll skip class today")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C2B")
+]
 
 
 :: 53 {"position":"1350,8075","size":"100,100"}
@@ -1221,7 +1728,16 @@ CARL: Uhh...I’m fine, it’s fine.
 
 KEVIN (text-color:grey)[(whispering)]: Okay, well let me know if you need me to share notes. I got you.
 
-[[Later that day->OFF-C2B]]
+(link: "Later that day")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C2B")
+]
 
 
 :: 54 {"position":"1350,8200","size":"100,100"}
@@ -1239,9 +1755,27 @@ CARL: Hm? No.
 
 After another few minutes of awkward silence,
 
-[[ALKA: ”Are you okay?”->OFF-C3A]]
+(link: "ALKA: Are you okay?")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C3A")
+]
 
-[[ALKA continues to eat in silence.->OFF-C3B]]
+(link: "ALKA continues to eat in silence.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C3B")
+]
 
 
 :: 55 {"position":"1350,8450","size":"100,100"}
@@ -1249,8 +1783,27 @@ The camera hesitates on Carl’s blanketed form on their bed, then turns to the 
 
 Alka stares after them, and ponders what to do.
 
-[[Ask directly->OFF-C4A]]
-[[Give them space->OFF-C4B]]
+(link: "Ask directly")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C4A")
+]
+
+(link: "Give them space")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "OFF-C4B")
+]
 
 
 :: 56 {"position":"1350,8700","size":"100,100"}
@@ -1270,7 +1823,16 @@ ALANNA: So?
 
 CARL (text-color:grey)[(sighs)]: You’ll never believe what happened after I left the park today...
 
-[[Later that night, in Carl and Alka's dorm room...->57]]
+(link: "Later that night, in Carl and Alka's dorm room...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "57")
+]
 
 
 :: 57 {"position":"1350,8825","size":"100,100"}
@@ -1304,7 +1866,16 @@ ALKA: Okay.
 
 Alka comes over and sits with Carl, watching them play. A few moments later, Carl wordlessly slides the other game controller to Alka. Alka leans over and bumps shoulders with Carl playfully and picks up the controller.
 
-And as our friends start to play a new game together, [[we...->58]]
+And as our friends start to play a new game together, (link: "we...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "58")
+]
 
 
 :: 58 {"position":"1350,8950","size":"100,100"}
@@ -1338,7 +1909,16 @@ CARL: Carl here.
 
 ALKA: Alka.
 
-Another student, Kevin, enters the [[aisle.->7]]
+Another student, Kevin, enters the (link: "aisle.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "7")
+]
 
 
 :: 7 {"position":"575,1450","size":"100,100"}
@@ -1350,7 +1930,16 @@ JENN (text-colour:grey)[(to Kevin)]: Hi! I’m Jenn!
 
 Kevin offers a hand to shake.
 
-KEVIN: Kevin. Nice to meet [[you.->8]]
+KEVIN: Kevin. Nice to meet (link: "you.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "8")
+]
 
 
 :: 8 {"position":"575,1575","size":"100,100"}
@@ -1382,7 +1971,16 @@ JENN: Oh, you got dumped then.
 
 ALKA: Wait - what?!
 
-CARL: See, that’s what [[I told him-->9]]
+CARL: See, that’s what (link: "I told him-")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "9")
+]
 
 
 :: 9 {"position":"575,1700","size":"100,100"}
@@ -1419,6 +2017,7 @@ CARL: Uh, I told you it’s they/them?
 ALKA (text-colour:grey)[(wincing)]: Sorry. *They’re* not that adventurous with food.
 
 YINAN: That’s okay!
+
 (text-colour:grey)[(to Carl)]: I’m so glad you like the chips!
 
 ALKA: Do you mind if I have some more? All the snacks I’ve had around here have been pretty...not good.
@@ -1435,7 +2034,16 @@ YINAN: -just kidding! Of course you can have more!
 
 ALKA: Ha, thanks!
 
-[[Next->10]]
+(link: "Next")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "10")
+]
 
 
 :: GRP-C1A {"position":"1050,5450","size":"100,100"}
@@ -1453,7 +2061,16 @@ ILSI (text-color:grey)[(not fully sold)]: It sounds kind of hard to play, but ma
 
 CARL: Okay, cool - let’s start designing it the next time we get together.
 
-[[A bit later at the NYU Makerspace...->36]]
+(link: "A bit later at the NYU Makerspace...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "36")
+]
 
 
 :: GRP-C1B {"position":"1175,5450","size":"100,100"}
@@ -1473,7 +2090,16 @@ ILSI: I just...(sighs) Okay, fine. Let’s go with the ultrasonic sensor. Maybe 
 
 CARL: Nice. Let’s start designing it when we get together next time.
 
-[[A bit later at the NYU Makerspace...->36]]
+(link: "A bit later at the NYU Makerspace...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "36")
+]
 
 
 :: GRP-C2A {"position":"1050,5700","size":"100,100"}
@@ -1492,7 +2118,16 @@ Ilsi makes a face - she doesn’t like how this is playing out at all.
 
 YINAN: Sigh...fine. Let’s see how it works.
 
-[[Alka puts the prototype down.->37]]
+(link: "Alka puts the prototype down.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "37")
+]
 
 
 :: GRP-C2B {"position":"1175,5700","size":"100,100"}
@@ -1503,7 +2138,16 @@ how it works?
 
 YINAN (text-color:grey)[(brightening up)]: Okay, let’s see what you’ve got.
 
-[[Alka puts the prototype down.->37]]
+(link: "Alka puts the prototype down.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "37")
+]
 
 
 :: GRP-C3A {"position":"1050,6200","size":"100,100"}
@@ -1517,7 +2161,16 @@ CARL (text-color:grey)[(wincing)]: Ooh, I don’t know about that.
 
 ALKA (text-color:grey)[(shrugs)]: They shouldn’t have messed with my code.
 
-[[In Yinan's dorm room...->40]]
+(link: "In Yinan's dorm room...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "40")
+]
 
 
 :: GRP-C3B {"position":"1200,6200","size":"100,100"}
@@ -1539,7 +2192,16 @@ CARL: I don’t know, dude. I think she wants to do a good job just like you do.
 
 ALKA: I guess...
 
-[[Later in the dorm room, Alka and Carl pore over Yinan's additions...->41]]
+(link: "Later in the dorm room, Alka and Carl pore over Yinan's additions...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "41")
+]
 
 
 :: INTRO {"position":"425,575","size":"100,100"}
@@ -1550,32 +2212,6 @@ ALKA: I guess...
 (set: $startTime to (current-time:))
 (set: $path to (history:))
 (if: $feedback is 0)[(set: $feedback to (a:))]
-<!-- Set up the feedback by going through all the passages and creating a new datamap -->
-<!-- (if: $feedback is 0)[ -->
-  <!-- (set: $feedback to (dm:)) -->
-  <!-- (set: $feedback to (a:)) -->
-  <!-- (set: _p to (passages:)) -->
-  <!-- (for: each _pass, ...(_p))[ -->
-    <!-- <script>console.log(_pass)</script> -->
-    <!-- (put: "asdf" into $feedback) -->
-    <!-- ] -->
-  <script>
-  // $feedback.set("name", 234);
-  // $feedback.push("name", 234);
-  // console.log($feedback);
-  // for(let p of _p){
-    // console.log(p.get('name'));
-    // let fb = {
-    //   'liked': 0,
-    //   'disliked': 0,
-    //   'confused': 0,
-    //   'notes': ""
-    // }
-    // $feedback.set(p.get('name'), fb);
-  // }
-  // console.log($feedback);
-  </script>
-<!-- ] -->
 <!-- DB CODE END -->
 }
 Thank you for testing this interactive story! 
@@ -1598,7 +2234,20 @@ to that specific part of the story.
 
 {
 To go to the next page, or to choose between different paths 
-at branching points in the story, click the [[blue text->S0-ORIENTATION]].
+at branching points in the story, click the (link: "blue text.")[
+  <!-- auto pointer issue so annoying https://intfiction.org/t/array-variables-are-pointers-vs-values-in-twine-harlowe/48887/3 -->
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  <script>
+    console.log($feedback)
+  </script> 
+  (go-to: "S0-ORIENTATION")
+]
 }
 
 :: OFF-C1A {"position":"1350,7200","size":"100,100"}
@@ -1622,7 +2271,16 @@ CARL: Actually...here I come. Thanks!
 
 LADY: You’re welcome!
 
-[[Inside the turnstile->48]]
+(link: "Inside the turnstile")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "48")
+]
 
 
 :: OFF-C1B {"position":"1475,7200","size":"100,100"}
@@ -1632,7 +2290,16 @@ LADY: Of course, no problem!
 
 She lets Carl in through the gate.
 
-[[Inside the turnstile->48]]
+(link: "Inside the turnstile")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "48")
+]
 
 
 :: OFF-C2A {"position":"1350,7950","size":"100,100"}
@@ -1642,7 +2309,16 @@ PROFESSOR: ...Therefore, the only stress that can be exerted on an object submer
 
 CARL (text-color:grey)[(a bit sheepish)]: Hi, sorry...
 
-Carl scans the room and spots Kevin gesturing to the empty seat next to him with his left hand. He sits [[down.->53]]
+Carl scans the room and spots Kevin gesturing to the empty seat next to him with his left hand. He sits (link: "down.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "53")
+]
 
 
 :: OFF-C2B {"position":"1475,8075","size":"100,100"}
@@ -1699,7 +2375,16 @@ ALKA: Oh. Hm. Okay.
 
 CARL: Let’s just eat in our room.
 
-[[Back at the dorms...->54]]
+(link: "Back at the dorms...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "54")
+]
 
 
 :: OFF-C3A {"position":"1350,8325","size":"100,100"}
@@ -1711,8 +2396,19 @@ CARL: Yeah bro, I’m fine.
 
 ALKA: ....Word, okay.
 
-Alka picks up their fork to eat, but Carl abruptly gets up, leaving their food on the table, walks over and gets into their bed, pulling their blanket up over their [[head.->55]]
-
+{
+Alka picks up their fork to eat, but Carl abruptly gets up, leaving their food on the table, 
+walks over and gets into their bed, pulling their blanket up over their (link: "head.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "55")
+]
+}
 
 :: OFF-C3B {"position":"1475,8325","size":"100,100"}
 Alka’s hand spears food on his fork, but before he can take a bite, Carl gets up and dumps their entire box of barely-eaten food into the trash can.
@@ -1721,7 +2417,16 @@ ALKA (text-color:grey)[(startled, setting fork down):] You okay?
 
 CARL: Not hungry.
 
-We watch as Carl plops in bed and pulls their blanket up and over their entire body and head.
+We watch as Carl plops in bed and pulls their blanket up and over their entire body and (link: "head.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "55")
+]
 
 
 :: OFF-C4A {"position":"1350,8575","size":"100,100"}
@@ -1741,7 +2446,16 @@ ALKA: I’m gonna head to Dibner for a bit.
 
 CARL: K.
 
-Alka leaves the [[room.->56]]
+Alka leaves the (link: "room.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "56")
+]
 
 
 :: OFF-C4B {"position":"1475,8575","size":"100,100"}
@@ -1757,7 +2471,16 @@ ALKA: I’m gonna head to Dibner for a bit.
 
 CARL: K.
 
-Alka leaves the [[room.->56]]
+Alka leaves the (link: "room.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "56")
+]
 
 
 :: OPENING-CREDITS {"position":"575,2200","size":"100,100"}
@@ -1799,7 +2522,16 @@ Male, 18, White-American
 PRAKESH
 Male, 52, Indian-American, Alka's dad
 
-[[ACT ONE->S1-TA]]
+(link: "ACT ONE")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "S1-TA")
+]
 
 
 :: S0-ORIENTATION {"position":"575,575","size":"100,100"}
@@ -1814,7 +2546,18 @@ We can hear the noisy bustle of an open area filled with people.
 Banners reading “WELCOME, NEW STUDENTS!” hang on every
 streetlight.
 
-Jenn is standing in front of an NYU Tandon building in the quad holding her phone, which seems to have lost connection: "MAPS CAN'T REACH THE INTERNET". She looks around listlessly, but [[then-->1]]
+Jenn is standing in front of an NYU Tandon building in the quad holding her phone, which seems to have lost connection: "MAPS CAN'T REACH THE INTERNET". She looks around listlessly, but
+(link: "then...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "1")
+]
+
 
 :: S1-TA {"position":"800,2200","size":"100,100"}
 We are in a well-attended lab section with Yinan, Jenn, and Alka sitting together in the first row. Everyone has their laptops out and looks ready to go.
@@ -1828,7 +2571,16 @@ An arrow points to Josh and says: Josh, the TA. The lab’s exercise is written 
 
 (align:"<==")+(box:"=XX=")+(text-color:orange)[''TODAY’S EXERCISE: WRITE A PROGRAM THAT SIMULATES THE MONTY HALL PROBLEM.'']
 
-[[Next->13]]
+(link: "Next")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "13")
+]
 
 
 :: S2-GROUPWORK {"position":"1050,4575","size":"100,100"}
@@ -1839,7 +2591,16 @@ An arrow points to Josh and says: Josh, the TA. The lab’s exercise is written 
 }
 
 Outside Herald Square, Alka, wearing a backpack-style violin case slung one-strapped
-over his shoulder, walks briskly down the bustling avenue, lost in the thrumming rhythm of the city. He is FaceTiming with his father, Prakesh, on his iPhone. The connection is a little [[shaky.->30]]
+over his shoulder, walks briskly down the bustling avenue, lost in the thrumming rhythm of the city. He is FaceTiming with his father, Prakesh, on his iPhone. The connection is a little (link: "shaky.")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "30")
+]
 
 
 :: S3-OFFCAMPUS {"position":"1350,6575","size":"100,100"}
@@ -1854,20 +2615,38 @@ ALKA: So...anything interesting happen today?
 
 Carl stays playing on their phone - it doesn’t seem like they heard him. Alka shrugs and goes back to eating.
 
-[[Earlier that week, in Central Park...->44]]
+(link: "Earlier that week, in Central Park...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "44")
+]
 
 
-:: TA-C1a {"position":"800,2575","size":"100,100"}
+:: TA-C1A {"position":"800,2575","size":"100,100"}
 YINAN: Ohhhh - sorry. I don’t think switching doors would make a difference? And actually it’s ''Yi’nan''.
 
 JOSH: That’s what I said.(text-colour:grey)[ (beat) ]But OK, we have one vote for switch and one for it doesn’t matter.
 
 Yinan frowns with a “wtf” face. Jenn and Alka watch her with a sympathetic expression.
 
-[[Next->TA-C1b]]
+(link: "Next")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "TA-C1B")
+]
 
 
-:: TA-C1b {"position":"925,2575","size":"100,100"}
+:: TA-C1B {"position":"925,2575","size":"100,100"}
 Recitation has ended, and Josh is packing up his laptop at the lectern. Students are gathering their things, talking and filing out, etc.
 
 Jenn and Alka are leaving.
@@ -1919,10 +2698,19 @@ JOSH: Oh. Okay - Yi...nan.
 
 YINAN: Thank you.
 
-[[Next->15]]
+(link: "Next")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "15")
+]
 
 
-:: TA-C2a {"position":"800,4200","size":"100,100"}
+:: TA-C2A {"position":"800,4200","size":"100,100"}
 ALANNA: What about your academic advisor?
 
 Yinan clearly hasn’t thought about that before.
@@ -1933,10 +2721,19 @@ ALANNA: The academic advisors are here to advocate for the students. I think if 
 
 YINAN: Thanks! That hadn’t crossed my mind at all.
 
-[[The next day...->27]]
+(link: "The next day...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "27")
+]
 
 
-:: TA-C2b {"position":"925,4200","size":"100,100"}
+:: TA-C2B {"position":"925,4200","size":"100,100"}
 ALANNA: The professor can be a really good resource. What do you think about talking to him?
 
 YINAN: I thought about that, but I don’t think I know him well enough to talk about my issue.
@@ -1947,4 +2744,13 @@ But if anything, I’d be happy to have you in my session. I can just ask the pr
 
 YINAN: Oh, that would be great!
 
-[[The next day...->27]]
+(link: "The next day...")[
+  (set: _feedback to (a: 0, 0, 0, ""))
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  (go-to: "27")
+]
