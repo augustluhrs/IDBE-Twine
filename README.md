@@ -16,7 +16,7 @@ Repository of Twine source files for Tandon IDBE Game.
 - [X] Sheet Logging Player Path
 - [ ] Sheet Logging Passage Feedback
 - [ ] Feedback Buttons
-- [ ] Send POST on final page instead of every page (only 500 requests avail.)
+- [X] Send updates on first page, beginning of 2nd scenario, and on final page instead of every page (only 500 requests avail.)
 - [ ] Bearer token in glitch .env (is security overkill?)
 - [X] ~~Load Game at Start if Cookies Exist~~
 

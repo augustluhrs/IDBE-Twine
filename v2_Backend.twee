@@ -1,5 +1,5 @@
 :: StoryTitle
-v2_Backend
+IDBE Twine Test
 
 
 :: StoryData
@@ -42,9 +42,10 @@ v2_Backend
       ]
     })
   })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 </script>
+
 
 :: UpdateSheet
 (set: $time to (current-time:))
@@ -71,6 +72,7 @@ v2_Backend
     .then((data) => console.log(data));
 </script>
 
+
 :: 1 {"position":"575,700","size":"100,100"}
 
 ILSI: Looking for something?
@@ -89,11 +91,11 @@ JENN: That’s so cool! [[My name is-->2]]
 
 
 :: 10 {"position":"575,1825","size":"100,100"}
-JENN (whispering): You know, if you’re looking for good food, the place to go is Queens.
+JENN (text-color:grey)[(whispering)]: You know, if you’re looking for good food, the place to go is Queens.
 
-ALKA:Oh yeah?
+ALKA: Oh yeah?
 
-JENN:Definitely. You can get anything there. There’s Chinese...
+JENN: Definitely. You can get anything there. There’s Chinese...
 (text-colour:grey)[(gesturing at Yinan)]
 There’s Indian...Pakistani??
 (text-colour:grey)[(gesturing at Alka)]
@@ -133,8 +135,7 @@ Jenn waves at Ilsi with a lot of enthusiasm.
 
 JENN (text-colour:grey)[(calling out across the rows)]: Hey Ilsi!
 
-Ilsi waves back, somewhat hesitantly but charmed by Jenn’s
-enthusiasm nonetheless.
+Ilsi waves back, somewhat hesitantly but charmed by Jenn’s enthusiasm nonetheless.
 
 ILSI (text-colour:grey)[(doesn’t actually know Jenn’s name)]: Oh, hey... you!
 
@@ -156,8 +157,7 @@ JENN: Let’s do...door number two.
 
 JOSH: Okay, but before we open door two. I’m gonna show you what’s behind door number one.
 
-Josh presses a key on his laptop, modifying his smartboard
-drawing:
+Josh presses a key on his laptop, modifying his smartboard drawing:
 
 JOSH: Knowing that there’s a goat behind number one, do you still want to open door number two? Or is it a better idea to switch to door number three instead?
 
@@ -179,8 +179,7 @@ Jenn, uncomfortable, watches Yinan just sitting there for a beat, then finally n
 
 JENN (text-colour:grey)[(leaning towards Yinan, whispering)]: I think he’s talking to you...
 
-We linger on Yinan looking at Jenn with confusion - then she
-visibly realizes that //she’s// “Yin-an.”
+We linger on Yinan looking at Jenn with confusion - then she visibly realizes that //she’s// “Yin-an.”
 
 [[Yinan firmly brings it up now->TA-C1a]]
 
@@ -188,9 +187,9 @@ visibly realizes that //she’s// “Yin-an.”
 
 
 :: 15 {"position":"800,2700","size":"100,100"}
-A Month Ago:
+(text-colour:grey)[The next class:]
 
-(text-colour:grey)[Josh is focused on the first few rows of students, Yinan, Jenn, and Alka in particular.
+Josh is focused on the first few rows of students, Yinan, Jenn, and Alka in particular.]
 
 JOSH: What’s the difference between a function and a parameter?
 
@@ -206,13 +205,11 @@ goes to speak...
 
 
 :: 16 {"position":"800,2825","size":"100,100"}
-Three Weeks Ago:
-
-(text-colour:grey)[JOSH: Why is using the global statement a bad practice? Not just here, but in general?
+JOSH: Why is using the global statement a bad practice? Not just here, but in general?
 
 Yinan and noticeably fewer students raise their hands this time. Josh scans for someone to call on once again...
 
-JOSH: Brianna!]
+JOSH: Brianna!
 
 [[Fast forward another week->17]]
 
@@ -220,20 +217,20 @@ JOSH: Brianna!]
 :: 17 {"position":"800,2950","size":"100,100"}
 Once again:
 
-(text-colour:grey)[JOSH: Who can remind us what an enumeration is?
+JOSH: Who can remind us what an enumeration is?
 
 This time it’s just Yinan and two other students raising
 their hands...
 
-JOSH: Marcus!]
+JOSH: Marcus!
 
-[[Last week->18]]
+[[...and the next week's class->18]]
 
 
 :: 18 {"position":"800,3075","size":"100,100"}
 And finally:
 
-(text-colour:grey)[JOSH: Why isn’t the program compiling?
+JOSH: Why isn’t the program compiling?
 
 We’re down to only Yinan, looking deflated, halfheartedly
 raising her hand much lower than before...
@@ -248,17 +245,17 @@ ALKA: Errrrm...it’s uh...
 
 He really doesn’t know. Yinan leans towards him:
 
-YINAN (whispering): It’s missing an f for the float...
+YINAN (text-color:grey)[(whispering)]: It’s missing an f for the float...
 
-ALKA (to Josh, but glancing at Yinan nervously): There’s a...it’s missing uh...
+ALKA (text-color:grey)[(to Josh, but glancing at Yinan nervously)]: There’s a...it’s missing uh...
 
-YINAN (guiding him, whispering again): ...an f for the float...
+YINAN (text-color:grey)[(guiding him, whispering again)]: ...an f for the float...
 
-ALKA (to Josh, more confidently): It’s missing an f for the float.
+ALKA (text-color:grey)[(to Josh, more confidently)]: It’s missing an f for the float.
 
-JOSH: Great, let’s see what happens when we put that in...]
+JOSH: Great, let’s see what happens when we put that in...
 
-[[Back to the present->19]]
+[[After Class->19]]
 
 
 :: 19 {"position":"800,3200","size":"100,100"}
@@ -266,7 +263,7 @@ Alka, Jenn, and Yinan leave the classroom wearing different moods on their faces
 
 ALKA: Thank you, Yinan - you really saved me there!
 
-YINAN (flat expression): You’re welcome.
+YINAN (text-color:grey)[(flat expression)]: You’re welcome.
 
 Yinan quickly walks out of hallway, leaving her two friends behind. Alka and Jenn watch her leave.
 
@@ -274,13 +271,11 @@ ALKA: I’m a bit concerned about Yinan...
 
 JENN: Me, too. But I don’t know if we should say anything?
 
-ALKA (sighs): [[I don’t know, either.->20]]
+ALKA (text-color:grey)[(sighs)]: [[I don’t know, either.->20]]
 
 
 :: 2 {"position":"575,825","size":"100,100"}
-<!-- DB CODE START -->
-(display: "UpdateSheet")
-<!-- DB CODE END -->
+
 ILSI’S ROOMMATE: Ilsi! There you are!
 
 ILSI (text-colour:grey)[(to roommate)]: Oh hey!
@@ -321,9 +316,7 @@ Carl doesn’t know the whole story, but it doesn’t sound good.
 
 CARL (text-colour:grey)[(wincing)]: Oof, sorry...
 
-YINAN(text-colour:grey)[ (sighs)]: Thanks. It just feels really unfair because of the whole Josh situation.
-
-Really lonely, too, like, why am I the only person who has to deal with this?
+YINAN(text-colour:grey)[ (sighs)]: Thanks. It just feels really unfair because of the whole Josh situation. Really lonely, too, like, why am I the only person who has to deal with this?
 
 Jenn and Alka squirm uncomfortably.
 
@@ -391,7 +384,7 @@ KEVIN: You’re welcome!
 :: 24 {"position":"800,3825","size":"100,100"}
 A door with a name tag reading “Yinan” with cute hand-drawn doodles on it. Yinan enters the hallway and finds Alka, Jenn, and Carl sitting on the floor outside of Yinan room.
 
-YINAN (surprised to see her friends here): Oh, hey friends! What are you doing
+YINAN (text-color: grey)[(surprised to see her friends here)]: Oh, hey friends! What are you doing
 here?
 
 JENN: We were hoping to run into you!
@@ -410,8 +403,7 @@ JENN: You’re welcome!
 
 ALKA: Of course!
 
-CARL: Yeah Yinan, I only know what Jenn and Alka told me about what happened. But I also know what it feels like to have someone address you in a way that doesn’t reflect
-your identity. I’m so sorry you’ve been dealing with this.
+CARL: Yeah Yinan, I only know what Jenn and Alka told me about what happened. But I also know what it feels like to have someone address you in a way that doesn’t reflect your identity. I’m so sorry you’ve been dealing with this.
 
 YINAN: Thank you, Carl. I really appreciate that.
 
@@ -518,7 +510,7 @@ well.
 
 ISAAC (text-colour:grey)[(scoffs)]: Alanna told me she couldn't even understand it.
 
-JOSH (peering at Isaac): Wait, I’m confused - are you saying that about Alanna? Because for sure the way you're naming things in your code makes it harder to understand. Like, what does "g67" refer to here?
+JOSH (text-color:grey)[(peering at Isaac)]: Wait, I’m confused - are you saying that about Alanna? Because for sure the way you're naming things in your code makes it harder to understand. Like, what does "g67" refer to here?
 
 ISAAC: Uhh, that's the monthly income variable.
 
@@ -556,7 +548,7 @@ GABRIEL: I may not be a TA, but I’m all in for moral support.
 
 ALANNA: Sometimes I feel like I have to try really hard as a TA, but people still don’t take me seriously. But then when a student who values my advice comes to me, the experience she shared with me makes me feel I haven’t done enough to help them.
 
-GABRIEL (pauses): But you’ve been doing your best. Everyone can see.
+GABRIEL (text-color:grey)[(pauses)]: But you’ve been doing your best. Everyone can see.
 
 ALANNA: I know... But...
 
@@ -586,11 +578,11 @@ JOSH: ‘sup Alanna!
 
 ALANNA: Oh hey.
 
-JOSH (sits down, opens his own laptop): You know, Isaac came to my office hours today.
+JOSH (text-color:grey)[(sits down, opens his own laptop)]: You know, Isaac came to my office hours today.
 
 ALANNA: Oh really.
 
-JOSH (nods): Yeah. He wanted to feel me out about the grade you gave him on his Financial Planner code.
+JOSH (text-color:grey)[(nods)]: Yeah. He wanted to feel me out about the grade you gave him on his Financial Planner code.
 
 ALANNA: What did you say?
 
@@ -600,7 +592,7 @@ Alanna smiles, appreciative.
 
 ALANNA: Cool. I know it goes without saying, but thank you for having my back.
 
-JOSH (smiles): Of course - always.
+JOSH (text-color:grey)[(smiles)]: Of course - always.
 
 They continue their work for a BEAT - but then Alanna closes
 her laptop.
@@ -611,7 +603,7 @@ JOSH: Sure thing, what’s up?
 
 ALANNA: You know some of the shortcuts we take in the classroom? Trying to remember everyone’s names or whatever.
 
-JOSH (uncomfortable, knowing where this is heading): I do, yeah.
+JOSH (text-color:grey)[(uncomfortable, knowing where this is heading)]: I do, yeah.
 
 ALANNA: Because I had a student approach me with some concerns...
 
@@ -633,19 +625,19 @@ PRAKESH: And how's your first semester coming along, Alka?
 
 ALKA: It's going good, Papa. There's a lot of work, but I'm managing.
 
-PRAKESH (squinting and leaning in): Is that your violin on your shoulder, Alka?
+PRAKESH (text-color:grey)[(squinting and leaning in)]: Is that your violin on your shoulder, Alka?
 
 ALKA: Yeah, Papa. I was just jamming with some [[friends->31]].
 
 
 :: 31 {"position":"1050,4825","size":"100,100"}
-PRAKESH (raising an eyebrow): “Jamming”?
+PRAKESH (text-color:grey)[(raising an eyebrow)]: “Jamming”?
 
 ALKA: Yes, Papa. Like playing music with friends just for fun.
 
 PRAKESH: I hope you aren’t letting all this  fun distract you from your studies. You’re in school to get good grades and a stable job - Alka? Are you there?
 
-ALKA (aiming his phone camera back at his face): Sorry, Papa, I stumbled. I was going to say the jamming is actually somewhat related to my studies - I’m working on a group project where we have to design a new kind of musical instrument. So this... jamming, it gives me ideas.
+ALKA (text-color:grey)[(aiming his phone camera back at his face)]: Sorry, Papa, I stumbled. I was going to say the jamming is actually somewhat related to my studies - I’m working on a group project where we have to design a new kind of musical instrument. So this... jamming, it gives me ideas.
 
 Prakesh nods, looking thoughtful and reassured. Just then, Alka passes by an ELEVATOR leading to the subway station. A sign taped to it reads 'OUT OF ORDER'. Alka notices a wheelchair-bound man at the top of the nearby stairs leading to the subway. A good samaritan stands with her hands on the handlebars to the man’s wheelchair looking anxious and scanning the crowd, obviously searching for someone to [[help->32]].
 
@@ -654,7 +646,7 @@ Prakesh nods, looking thoughtful and reassured. Just then, Alka passes by an ELE
 GOOD SAMARITAN: Excuse me, would you be able to -
 
 ALKA: You need help getting down the stairs?
-(to Prakesh): Papa, I need to go. There's someone here who needs my help.
+(text-color:grey)[(to Prakesh:)] Papa, I need to go. There's someone here who needs my help.
 
 PRAKESH: Of course, son. We'll talk later.
 
@@ -703,13 +695,13 @@ ILSI: Wait, who put you in charge?
 
 ALKA: Someone has to step up or we’re never going to make any progress. And not for nothing, but I’ve been playing music my whole life.
 
-CARL (to Yinan and Ilsi): He’s really good at violin.
+CARL (text-color:grey)[(to Yinan and Ilsi)]: He’s really good at violin.
 
 ALKA: Piano too.
 
 ILSI: That’s great, but -
 
-YINAN (quickly): I vote for Alka!
+YINAN (text-color:grey)[(quickly)]: I vote for Alka!
 
 Alka, Ilsi, and Yinan look to Carl, who’s suddenly in a tough spot.
 
@@ -719,9 +711,9 @@ ILSI: You don’t have to vote for him just because he’s your roommate.
 
 Time to make a decision.
 
-[[Alka: ”Let’s just do the ultrasonic sensor thing”->GRP_C1A]]
+[[Alka: ”Let’s just do the ultrasonic sensor thing”->GRP-C1A]]
 
-[[Alka: ”What do you think we should do instead?”->GRP_C1B]]
+[[Alka: ”What do you think we should do instead?”->GRP-C1B]]
 
 
 :: 36 {"position":"1050,5575","size":"100,100"}
@@ -746,9 +738,9 @@ ALKA: I was just trying to help the group get this thing done, for all of us.
 YINAN: Okay, but I thought we were going to talk about how to approach it today.
 (Shows a folder of drawings) I came up with a bunch of designs I thought we could discuss.
 
-[[ALKA: ”I don’t think we want to get too crazy with designs. Let me play mine for you.”->GRP_C2A]]
+[[ALKA: ”I don’t think we want to get too crazy with designs. Let me play mine for you.”->GRP-C2A]]
 
-[[ALKA: ”Maybe we can combine your ideas with what I built. Can I show you how it works?”->GRP_C2B]]
+[[ALKA: ”Maybe we can combine your ideas with what I built. Can I show you how it works?”->GRP-C2B]]
 
 
 :: 37 {"position":"1050,5825","size":"100,100"}
@@ -815,15 +807,13 @@ ALKA: Well, all instruments take practice.
 
 YINAN: Right, but...
 
-CARL (shrugs): He’s able to play it.
+CARL (text-color:grey)[(shrugs)]: He’s able to play it.
 
 ILSI: I don’t know. This doesn’t seem very accessible to me. Maybe we should think about getting feedback from the people who would actually use it...
 
 ALKA: Look, it works and you don’t need a lot of dexterity to play it. It’s a physically accessible design.
 
-ILSI: Right, but you aren’t listening. Accessibility isn’t just about dexterity and physicality. There’s different ways of learning, too, and not everyone knows music like you do.
-
-ILSI: I think we need to account for that if we’re trying to make it easier for people to play music.
+ILSI: Right, but you aren’t listening. Accessibility isn’t just about dexterity and physicality. There’s different ways of learning, too, and not everyone knows music like you do. I think we need to account for that if we’re trying to make it easier for people to play music.
 
 ALKA: How are we supposed to account for that?
 
@@ -864,14 +854,17 @@ CARL: You can always revert? (off Alka, opening GitHub)...what are you doing?
 
 Alka types Yinan and Ilsi’s usernames into the ‘block a user’ field on GitHub, and pauses:
 
-[[”I’ll tell you in a sec.”->GRP_C3A]]
+[[”I’ll tell you in a sec.”->GRP-C3A]]
 
-[[”I’m blocking them.”->GRP_C3B]]
+[[”I’m blocking them.”->GRP-C3B]]
 
 
 :: 4 {"position":"575,1075","size":"100,100"}
-Yinan, in some strange clothes, which can either be absolute garbage or the extreme of high fashion, approaches. She is holding a bag of shrimp
+{
+Yinan, in some strange clothes, which can either be absolute garbage 
+or the extreme of high fashion, approaches. She is holding a bag of shrimp
 chips, looking for a seat.
+}
 
 JENN: Hi! This seat isn’t taken! I’m Jenn!
 
@@ -883,7 +876,7 @@ YINAN (text-colour:grey)[(not sure why Jenn is so hyped up)]: [[Oh, thanks.->5]]
 :: 40 {"position":"1050,6325","size":"100,100"}
 Ilsi and Yinan have a rudimentary, breadboard version of the prototype built out on Yinan’s desk - an ultrasonic sensor, LCD screen, button, and two potentiometers all wired to an Arduino.
 
-ILSI (excited): Alright, let’s compile and see if it works!
+ILSI (text-color:grey)[(excited)]: Alright, let’s compile and see if it works!
 
 Yinan does something on her laptop, then makes a confused face.
 
@@ -903,7 +896,7 @@ ILSI: Good!
 
 But just then, Ilsi and Yinan’s phones buzz. Ilsi checks hers, and:
 
-ILSI: Wait, don’t send that - Carl said he spoke to Alka and they want us to meet at MakerSpace.
+ILSI: Wait, don’t send that - Carl said he spoke to Alka and they want us to meet at the MakerSpace.
 
 [[At the Makerspace->42]]
 
@@ -939,7 +932,7 @@ Outside the Makerspace, Yinan and Ilsi see Alka and Carl waiting for them. Alka 
 
 CARL: Hey, so I think Alka has something to say.
 
-ALKA (sheepishly): I...I wanted to apologize for locking both of you out of the project files. I shouldn't have done it. I did it in the heat of the moment, and it was pretty selfish of me. I'm sorry. 
+ALKA (text-color:grey)[(sheepishly)]: I...I wanted to apologize for locking both of you out of the project files. I shouldn't have done it. I did it in the heat of the moment, and it was pretty selfish of me. I'm sorry. 
 
 Yinan and Ilsi glance at each other.
 
@@ -965,7 +958,7 @@ The gang are gathered around a table with a new and improved version of the prot
 
 ALKA: I think we’re good to go.
 
-YINAN (barely able to contain herself): I’m so excited!
+YINAN (text-color:grey)[(barely able to contain herself)]: I’m so excited!
 
 ILSI: Can I try it?
 
@@ -973,7 +966,7 @@ ALKA: Def, go for it!
 
 Ilsi turns the knobs on the prototype, selecting a pentatonic minor scale in the key of G.
 
-ILSI (takes a deep breath): Okay, here we go...
+ILSI (text-color:grey)[(takes a deep breath)]: Okay, here we go...
 
 She positions one hand over the machine and the other on its pushpad button - and proceeds to improvise a lovely, harmonious melody. Everyone’s face lights up.
 
@@ -983,7 +976,7 @@ CARL: Amazing!
 
 ILSI: It’s so much easier to play!
 
-CARL (To Ilsi, pointing to the machine): You mind?
+CARL (text-color:grey)[(To Ilsi, pointing to the machine)]: You mind?
 
 ILSI: Not at all!
 
@@ -1001,14 +994,19 @@ As our friends congratulate Carl and each other, we...
 :: 44 {"position":"1350,6700","size":"100,100"}
 A sweeping aerial view of the meadow stretching endlessly on one of those rare and perfect “suns out, guns out” days of warmth, sunshine, and low humidity in NYC. 
 
-Amid all the joyful New Yorkers laying out on beach towels, having picnics, throwing frisbees, etc., we find Alanna and Carl sitting together on a picnic blanket. Carl is
-studying a physics textbook with their notebook and hoodie nearby, their highlighters and pens scattered about; Alanna has her laptop open, grading her students’ coding assignments. 
+{
+Amid all the joyful New Yorkers laying out on beach towels, having picnics, 
+throwing frisbees, etc., we find Alanna and Carl sitting together on a picnic 
+blanket. Carl is studying a physics textbook with their notebook and hoodie nearby, 
+their highlighters and pens scattered about; Alanna has her laptop open, 
+grading her students’ coding assignments.
+}
 
 Carl squints at a particularly troublesome problem in their textbook.
 
 CARL: I don’t get it, why does the beam break when I apply the load here?
 
-ALANNA (reading over his shoulder): Think about the way the force is being distributed across the beam from both ends. It’s like a teeter- totter, but there’s no fulcrum in the middle.
+ALANNA (text-color:grey)[(reading over his shoulder)]: Think about the way the force is being distributed across the beam from both ends. It’s like a teeter- totter, but there’s no fulcrum in the middle.
 
 CARL: Ohhh, I need to move it further out...
 
@@ -1018,8 +1016,7 @@ They fall into a comfortable silence. Alanna concentrates on her screen with a f
 
 CARL: What’s up, cuz? Now you look puzzled.
 
-ALANNA: Heh, says the person who’s been wrestling with the same problem for
-thirty minutes...
+ALANNA: Heh, says the person who’s been wrestling with the same problem for thirty minutes...
 
 CARL: Touché. But seriously, what’s up? 
 
@@ -1029,7 +1026,7 @@ ALANNA: This student’s code... it’s unnecessarily complex. They could have w
 
 CARL: Maybe they’re showing off?
 
-ALANNA (frowning at her screen): Efficiency is a show-off in coding, not verbosity. I’ll have to note that down -
+ALANNA (text-color:grey)[(frowning at her screen)]: Efficiency is a show-off in coding, not verbosity. I’ll have to note that down -
 
 Suddenly, a soft, fuzzy, day-glo tennis ball rolls over and bumps Carl’s knee. A nine year old girl is standing fifteen feet away with a Velcro catch paddle on her hand, her DAD standing further back with his own [[paddle.->45]]
 
@@ -1063,8 +1060,7 @@ A reminder on the screen reads:
 
 (text-colour:orange)[2:30 MECHANICS LECTURE M/W JABS 475]
 
-Carl dismisses the notification with a swipe of their thumb
-and sets the phone down.
+Carl dismisses the notification with a swipe of their thumb and sets the phone down.
 
 ALANNA: Time to go?
 
@@ -1080,14 +1076,14 @@ Carl packs everything into their backpack, plugs their airpods in, chooses their
 
 
 :: 46 {"position":"1350,6950","size":"100,100"}
-Carl’s hands touch their phone to the omny sensor, which beeps and turns white. They push the turnstile, but it doesn’t turn. They look at their phone and see an Apple Pay error message:
+Carl’s hands touch their phone to the Omny sensor, which beeps and turns white. They push the turnstile, but it doesn’t turn. They look at their phone and see an Apple Pay error message:
 
 (text-colour:orange)[APPLE PAY SERVICES ARE CURRENTLY UNAVAILABLE.
 PLEASE TRY AGAIN LATER]
 
 Carl groans. They go to the Metrocard ATM and tap the $9 Fast Metrocard option. Carl takes the metrocard and swipes it at the turnstile - but the turnstile doesn’t turn. A message on the turnstile screen reads:
 
-SWIPE CARD AGAIN AT THIS TURNSTILE
+(text-colour:orange)[SWIPE CARD AGAIN AT THIS TURNSTILE]
 
 CARL: [[Okayyy...->47]]
 
@@ -1105,9 +1101,9 @@ LADY: Need some help?
 
 She’s holding the emergency gate open for Carl.
 
-[[CARL: ”Oh, no - I think I’m good.”->OFF_C1A]]
+[[CARL: ”Oh, no - I think I’m good.”->OFF-C1A]]
 
-[[CARL: ”Thank you so much!”->OFF_C1B]]
+[[CARL: ”Thank you so much!”->OFF-C1B]]
 
 
 :: 48 {"position":"1350,7325","size":"100,100"}
@@ -1115,13 +1111,13 @@ As Carl and the lady take a few steps away from the turnstile gate - two underco
 
 One officer is male and white, the other female and black; each is dressed like a regular commuter, but they have badges pulled out and dangling from lanyards around their necks.
 
-MALE TRANSIT OFFICER (authoratatively): Step over here, sir.
+MALE TRANSIT OFFICER (text-color:grey)[(authoratatively)]: Step over here, sir.
 
 CARL: Everything okay?
 
 FEMALE TRANSIT OFFICER: We witnessed you evading a fare.
 
-CARL (disbelieving): No, my card wouldn’t work.
+CARL (text-color:grey)[(disbelieving)]: No, my card wouldn’t work.
 
 LADY: That’s true, I saw him.
 
@@ -1131,16 +1127,15 @@ MALE TRANSIT OFFICER: I need your ID, sir.
 
 CARL: No, for real - I was trying to pay.
 
-MALE TRANSIT OFFICER (holding out hand): Sir, I need your name and ID.
+MALE TRANSIT OFFICER (text-color:grey)[(holding out hand)]: Sir, I need your name and ID.
 
 CARL: Are ya’ll really serious?
 
-FEMALE TRANSIT OFFICER: You can’t go through the gate
-without paying.
+FEMALE TRANSIT OFFICER: You can’t go through the gate without paying.
 
 CARL: Sis.
 
-FEMALE TRANSIT OFFICER (firmly): Sir.
+FEMALE TRANSIT OFFICER (text-color:grey)[(firmly)]: Sir.
 
 LADY: You’re really giving him a ticket?
 
@@ -1150,7 +1145,7 @@ The lady turns to Carl and winces sympathetically.
 
 LADY: Sorry...
 
-As she scurries away, Carl looks around the station and sees people staring at them, as his heart pounds away.
+As she scurries away, Carl looks around the station and sees people staring at them, as their heart pounds away.
 
 [[Minutes later...->49]]
 
@@ -1201,9 +1196,9 @@ As we approach the front door of the building, Carl checks their phone again...
 
 (text-colour:orange)[2:40 PM]
 
-[[CARL: ”Ugh, I’ll have to slide in late to class”->OFF_C2A]]
+[[CARL: ”Ugh, I’ll have to slide in late to class”->OFF-C2A]]
 
-[[CARL: ”Forget it, I’ll skip class today”->OFF_C2B]]
+[[CARL: ”Forget it, I’ll skip class today”->OFF-C2B]]
 
 
 :: 53 {"position":"1350,8075","size":"100,100"}
@@ -1215,15 +1210,15 @@ KEVIN: //indistinct sounds//
 
 The CLASSROOM SOUNDS FADE to a hum and Carl turns to Kevin, who’s leaning towards us and wearing a concerned expression.
 
-CARL (whispering): Huh, what?
+CARL (text-color:grey)[(whispering)]: Huh, what?
 
-KEVIN (whispering): I said, you good?
+KEVIN (text-color:grey)[(whispering)]: I said, you good?
 
 CARL: Uhh...I’m fine, it’s fine.
 
-KEVIN (whispering): Okay, well let me know if you need me to share notes. I got you.
+KEVIN (text-color:grey)[(whispering)]: Okay, well let me know if you need me to share notes. I got you.
 
-[[Later that day->OFF_C2B]]
+[[Later that day->OFF-C2B]]
 
 
 :: 54 {"position":"1350,8200","size":"100,100"}
@@ -1241,18 +1236,18 @@ CARL: Hm? No.
 
 After another few minutes of awkward silence,
 
-[[ALKA: ”Are you okay?”->OFF_C3A]]
+[[ALKA: ”Are you okay?”->OFF-C3A]]
 
-[[ALKA continues to eat in silence.->OFF_C3B]]
+[[ALKA continues to eat in silence.->OFF-C3B]]
 
 
 :: 55 {"position":"1350,8450","size":"100,100"}
 The camera hesitates on Carl’s blanketed form on their bed, then turns to the clock on Alka’s nightstand - it’s only 3:30 in the afternoon.
 
-Alka stares after him, and ponders what to do.
+Alka stares after them, and ponders what to do.
 
-[[Ask directly->OFF_C4A]]
-[[Give them space->OFF_C4B]]
+[[Ask directly->OFF-C4A]]
+[[Give them space->OFF-C4B]]
 
 
 :: 56 {"position":"1350,8700","size":"100,100"}
@@ -1270,7 +1265,7 @@ CARL: Heh, ah. Okay, yeah. Good point.
 
 ALANNA: So?
 
-CARL (sighs): You’ll never believe what happened after I left the park today...
+CARL (text-color:grey)[(sighs)]: You’ll never believe what happened after I left the park today...
 
 [[Later that night, in Carl and Alka's dorm room...->57]]
 
@@ -1280,19 +1275,19 @@ Alka opens the door and enters the room with quiet, considerate care, in case Ca
 
 The blinds have been reopened and there is a stack of neatly folded laundry on Alka’s bed. Carl’s side of the room has been straightened up, too. The whole vibe in their dorm is different now.
 
-ALKA (touched and surprised): Dude, you picked up my laundry??
+ALKA (text-color:grey)[(touched and surprised)]: Dude, you picked up my laundry??
 
-CARL (intensly focused on their game): Yeah, I meant to remind you but you already left.
+CARL (text-color:grey)[(intensly focused on their game)]: Yeah, I meant to remind you but you already left.
 
 ALKA: Man. Thank you so mu- dang it. I called you ‘dude.’ Then I said ‘man,’ which-
 
-CARL (waving it away): -it’s fine. And you’re welcome.
+CARL (text-color:grey)[(waving it away)]: -it’s fine. And you’re welcome.
 
 ALKA: Cool.
 
 Alka starts putting his clothes away, and after a bit, Carl pauses their game and looks over at Alka.
 
-CARL: Hey...sorry I was short with you earlier. You were really trying to push me to talk, but I wasn’t ready yet.
+CARL: Hey... Sorry I was short with you earlier. You were really trying to push me to talk, but I wasn’t ready yet.
 
 ALKA: Oh, no, that’s fine. And I’m sorry. I wanted to help you feel better, but it took me a minute to figure out how to do that in a way that was actually helpful to you.
 
@@ -1310,6 +1305,9 @@ And as our friends start to play a new game together, [[we...->58]]
 
 
 :: 58 {"position":"1350,8950","size":"100,100"}
+<!-- DB CODE START -->
+(display: "UpdateSheet")
+<!-- DB CODE END -->
 (align:"=><=")[''FADE TO BLACK'']
 
 (align:"=><=")[Thank you for playing this pilot of our game. After our discussion of the demo today, you can expect to recieve a short survey asking a few questions about your gaming experience. This survey is entirely confidential and the data it collects will be used only by the development team to improve the game. 
@@ -1390,7 +1388,7 @@ Jenn, Alka, and Carl stare at her in silence, surprised by her sudden offer and 
 
 YINAN: Come on, you know you want some.
 
-JENN (excited, loud): Sure, I’ll have some. Thank you so much!
+JENN (text-color:grey)[(excited, loud)]: Sure, I’ll have some. Thank you so much!
 
 Jenn reaches past Alka and Carl, getting chips from Jenn, spilling a few on Alka. Alka just picks up that spilled one, giving another to Carl.
 
@@ -1408,14 +1406,14 @@ ALKA: See. I know you already.
 
 Alka turns to Yinan.
 
-ALKA (to Yinan): He’s not that adventurous with food.
+ALKA (text-colour:grey)[(to Yinan)]: He’s not that adventurous with food.
 
 CARL: Uh, I told you it’s they/them?
 
 ALKA (text-colour:grey)[(wincing)]: Sorry. *They’re* not that adventurous with food.
 
 YINAN: That’s okay!
-(to Carl): I’m so glad you like the chips!
+(text-colour:grey)[(to Carl)]: I’m so glad you like the chips!
 
 ALKA: Do you mind if I have some more? All the snacks I’ve had around here have been pretty...not good.
 
@@ -1434,7 +1432,7 @@ ALKA: Ha, thanks!
 [[Next->10]]
 
 
-:: GRP_C1A {"position":"1050,5450","size":"100,100"}
+:: GRP-C1A {"position":"1050,5450","size":"100,100"}
 Alka turns to Ilsi.
 
 ALKA: We only have two weeks to build something. Let’s just do the ultrasonic sensor thing.
@@ -1445,21 +1443,23 @@ ALKA: That’s what I want too!
 
 YINAN: The sensor will make it so all you have to do is wave your hand or arm to pick the notes you play.
 
-ILSI (not fully sold): It sounds kind of hard to play, but maybe it’ll be easier than I think. Let’s just start with this idea and see how it turns out.
+ILSI (text-color:grey)[(not fully sold)]: It sounds kind of hard to play, but maybe it’ll be easier than I think. Let’s just start with this idea and see how it turns out.
 
 CARL: Okay, cool - let’s start designing it the next time we get together.
 
 [[A bit later at the NYU Makerspace...->36]]
 
 
-:: GRP_C1B {"position":"1175,5450","size":"100,100"}
+:: GRP-C1B {"position":"1175,5450","size":"100,100"}
 Alka turns to Ilsi.
 
 ALKA: What do you think we should do instead?
 
 ILSI: I really think we need to think through the accessibility more. Waving your hand or arm to play notes makes me think of a theremin, and those seem hard to play, especially if you want to sound good.
 
-CARL: I’m not sure the user’s musical ability is a problem we can solve. Alka touches his nose and points to Carl.
+CARL: I’m not sure the user’s musical ability is a problem we can solve. 
+
+Alka touches his nose and points to Carl.
 
 ALKA: Exactly.
 
@@ -1470,15 +1470,15 @@ CARL: Nice. Let’s start designing it when we get together next time.
 [[A bit later at the NYU Makerspace...->36]]
 
 
-:: GRP_C2A {"position":"1050,5700","size":"100,100"}
+:: GRP-C2A {"position":"1050,5700","size":"100,100"}
 Alka turns to Yinan.
 
 ALKA: I don’t think we want to get too crazy with designs. Let me play it for you.
 
-YINAN (bristling): I actually do think we want to be thoughtful about design, since we’re trying to make something accessible.
+YINAN (text-color:grey)[(bristling)]: I actually do think we want to be thoughtful about design, since we’re trying to make something accessible.
 
 ALKA: Right. That’s why I used your idea for the interface.
-(to Carl) What do you think?
+(text-color:grey)[(to Carl)] What do you think?
 
 CARL: Honestly, I just want to get this project done.
 
@@ -1489,39 +1489,39 @@ YINAN: Sigh...fine. Let’s see how it works.
 [[Alka puts the prototype down.->37]]
 
 
-:: GRP_C2B {"position":"1175,5700","size":"100,100"}
+:: GRP-C2B {"position":"1175,5700","size":"100,100"}
 Alka turns to Yinan.
 
 ALKA: Maybe we can combine your ideas with what I built. Can I show you
 how it works?
 
-YINAN (brightening up): Okay, let’s see what you’ve got.
+YINAN (text-color:grey)[(brightening up)]: Okay, let’s see what you’ve got.
 
 [[Alka puts the prototype down.->37]]
 
 
-:: GRP_C3A {"position":"1050,6200","size":"100,100"}
+:: GRP-C3A {"position":"1050,6200","size":"100,100"}
 ALKA: I’ll tell you in a sec, hold on.
 
 He clicks the Block user button and shuts his laptop.
 
 ALKA: There, problem solved - I blocked them.
 
-CARL (wincing): Ooh, I don’t know about that.
+CARL (text-color:grey)[(wincing)]: Ooh, I don’t know about that.
 
-ALKA (shrugs): They shouldn’t have messed with my code.
+ALKA (text-color:grey)[(shrugs)]: They shouldn’t have messed with my code.
 
 [[In Yinan's dorm room...->40]]
 
 
-:: GRP_C3B {"position":"1200,6200","size":"100,100"}
+:: GRP-C3B {"position":"1200,6200","size":"100,100"}
 ALKA: I’m blocking them.
 
 CARL: Ooh, I don’t know about that, man.
 
 ALKA: What? They should have asked before they started messing with my code.
 
-CARL (raising an eyebrow at “my code”): Hmm. Can I see what they changed? Maybe we can make it work.
+CARL (text-color:grey)[(raising an eyebrow at “my code”)]: Hmm. Can I see what they changed? Maybe we can make it work.
 
 ALKA: Make it work? We have something that works fine already.
 
@@ -1537,7 +1537,6 @@ ALKA: I guess...
 
 
 :: INTRO {"position":"425,575","size":"100,100"}
-
 <!-- DB CODE START -->
 (set: $date to (current-date:))
 (set: $time to (current-time:))
@@ -1546,7 +1545,7 @@ ALKA: I guess...
 (if: $feedback is 0)[(set: $feedback to (a:))]
 <!-- DB CODE END -->
 
-Thank you for testing this interactive narrative! 
+Thank you for testing this interactive story! 
 Your participation and feedback will help us make this a great game.
 
 Please enter the following information:
@@ -1555,10 +1554,10 @@ NetID: (input: bind $netID, "your netID")
 
 
 {
-There will be a feedback form you can fill out after 
+There will be a feedback form after 
 you read through these three scenarios,
-but you can also provide short feedback via the buttons 
-at the bottom of each page. These buttons are totally optional, but
+but you can also provide short feedback via the checkboxes 
+at the bottom of each page. These checkboxes are totally optional, but
 can be used for small notes that you don't want to forget, 
 or for general vibe checks that will automatically be linked 
 to that specific part of the story.
@@ -1566,15 +1565,15 @@ to that specific part of the story.
 
 {
 To go to the next page, or to choose between different paths 
-at branching points in the story, click the [[blue text ->S0-ORIENTATION]].
+at branching points in the story, click the [[blue text->S0-ORIENTATION]].
 }
 
-:: OFF_C1A {"position":"1350,7200","size":"100,100"}
+:: OFF-C1A {"position":"1350,7200","size":"100,100"}
 CARL: Oh, no - I think I’m good. Thanks, though.
 
 They start walking away from the turnstile and approach the booth for help, but when they get there they discover that it’s empty.
 
-CARL (to self): Really??
+CARL (text-color:grey)[(to self)]: Really??
 
 They look around for help, but all they see are commuters.
 
@@ -1593,7 +1592,7 @@ LADY: You’re welcome!
 [[Inside the turnstile->48]]
 
 
-:: OFF_C1B {"position":"1475,7200","size":"100,100"}
+:: OFF-C1B {"position":"1475,7200","size":"100,100"}
 CARL: Uhh...sure! Thank you so much!
 
 LADY: Of course, no problem!
@@ -1603,22 +1602,22 @@ She lets Carl in through the gate.
 [[Inside the turnstile->48]]
 
 
-:: OFF_C2A {"position":"1350,7950","size":"100,100"}
+:: OFF-C2A {"position":"1350,7950","size":"100,100"}
 Carl enters the class mid-lecture. The professor (female, 40s, white) interrupts what she’s saying and looks at us.
 
 PROFESSOR: ...Therefore, the only stress that can be exerted on an object submerged in a static fluid is one that tends to compress the object from all sides- hi, Carl, good afternoon.
 
-CARL (a bit sheepish): Hi, sorry...
+CARL (text-color:grey)[(a bit sheepish)]: Hi, sorry...
 
 Carl scans the room and spots Kevin gesturing to the empty seat next to him with his left hand. He sits [[down.->53]]
 
 
-:: OFF_C2B {"position":"1475,8075","size":"100,100"}
+:: OFF-C2B {"position":"1475,8075","size":"100,100"}
 Carl's standing in front of the grill station at the university cafeteria, holding a tray with a plate of chicken tenders and onion rings.
 
 GRILL STATION CASHIER: I need your ID, sir.
 
-CARL (startled): What??
+CARL (text-color:grey)[(startled)]: What??
 
 The Grill Station Cashier holds Carl’s student ID out to them.
 
@@ -1663,14 +1662,14 @@ One of the students sitting at the table puts their hand out to stop the chairs 
 Sorry, we’re waiting for our friends.
 
 ALKA: Oh. Hm. Okay.
-(to Carl): What do you think?
+(text-color:grey)[(to Carl):] What do you think?
 
 CARL: Let’s just eat in our room.
 
 [[Back at the dorms...->54]]
 
 
-:: OFF_C3A {"position":"1350,8325","size":"100,100"}
+:: OFF-C3A {"position":"1350,8325","size":"100,100"}
 Alka’s hand sets his plastic fork down.
 
 ALKA: Hey dude, I said, are you okay?
@@ -1679,29 +1678,27 @@ CARL: Yeah bro, I’m fine.
 
 ALKA: ....Word, okay.
 
-Alka picks up their fork to eat, but Carl abruptly gets up, leaving their food on the table, walks over and gets into his bed, pulling their blanket up over their [[head.->55]]
+Alka picks up their fork to eat, but Carl abruptly gets up, leaving their food on the table, walks over and gets into their bed, pulling their blanket up over their [[head.->55]]
 
 
-:: OFF_C3B {"position":"1475,8325","size":"100,100"}
-Alka’s hand spears food on his fork, but before he can take a bite, Carl gets up and
-dumps their entire box of barely-eaten food into the trash can.
+:: OFF-C3B {"position":"1475,8325","size":"100,100"}
+Alka’s hand spears food on his fork, but before he can take a bite, Carl gets up and dumps their entire box of barely-eaten food into the trash can.
 
-ALKA (startled, setting fork down): You okay?
+ALKA (text-color:grey)[(startled, setting fork down):] You okay?
 
 CARL: Not hungry.
 
 We watch as Carl plops in bed and pulls their blanket up and over their entire body and head.
 
 
-:: OFF_C4A {"position":"1350,8575","size":"100,100"}
-ALKA: Okay, something’s up. What’s going
-on?
+:: OFF-C4A {"position":"1350,8575","size":"100,100"}
+ALKA: Okay, something’s up. What’s going on?
 
-CARL (from under blanket): I told you I’m fine.
+CARL (text-color:grey)[(from under blanket)]: I told you I’m fine.
 
 ALKA: You don’t seem fine.
 
-CARL (firmly): Dude. Leave me alone.
+CARL (text-color:grey)[(firmly)]: Dude. Leave me alone.
 
 ALKA: Look, I’m just trying - you know what, you’re right. My bad. Sorry.
 
@@ -1714,7 +1711,7 @@ CARL: K.
 Alka leaves the [[room.->56]]
 
 
-:: OFF_C4B {"position":"1475,8575","size":"100,100"}
+:: OFF-C4B {"position":"1475,8575","size":"100,100"}
 ALKA: Hey, you don’t have to talk if you don’t want to...but just so you know, if you did want to talk, I’d be down.
 
 CARL: Thanks. I think I’m good.
@@ -1773,11 +1770,9 @@ Male, 52, Indian-American, Alka's dad
 
 
 :: S0-ORIENTATION {"position":"575,575","size":"100,100"}
-
 <!-- DB CODE START -->
 (display: "PostToSheet")
 <!-- DB CODE END -->
-
 
 We can hear the noisy bustle of an open area filled with people.
 
@@ -1797,17 +1792,21 @@ The slide is labeled MONTY HALL PROBLEM and it features a graphic of three close
 
 An arrow points to Josh and says: Josh, the TA. The lab’s exercise is written on the whiteboard as well:
 
-(align:"<==")+(box:"=XX=")[''TODAY’S EXERCISE: WRITE A PROGRAM THAT SIMULATES THE MONTY HALL PROBLEM.'']
+(align:"<==")+(box:"=XX=")+(text-color:orange)[''TODAY’S EXERCISE: WRITE A PROGRAM THAT SIMULATES THE MONTY HALL PROBLEM.'']
 
 [[Next->13]]
 
 
 :: S2-GROUPWORK {"position":"1050,4575","size":"100,100"}
+<!-- DB CODE START -->
+(display: "UpdateSheet")
+<!-- DB CODE END -->
 Outside Herald Square, Alka, wearing a backpack-style violin case slung one-strapped
 over his shoulder, walks briskly down the bustling avenue, lost in the thrumming rhythm of the city. He is FaceTiming with his father, Prakesh, on his iPhone. The connection is a little [[shaky.->30]]
 
 
 :: S3-OFFCAMPUS {"position":"1350,6575","size":"100,100"}
+
 In Alka and Carl's dorm room, at Othmer Residence Hall, we see Alka and Carl eating silently at their little dorm table, the noiselessness broken only by the scrape of plastic utensils against take-out containers.
 
 Alka’s side of the room is spare, neat, and organized - even his rock band posters are framed and hanging perfectly straight. Carl’s side is more relaxed, slightly messy even - books here and there, a few crooked pictures surrounded by string lights, posters (The Wiz, The Fresh Prince, Dragon Ball Z, graffiti art) casually push-pinned to the wall...
@@ -1816,8 +1815,7 @@ Alka fidgets, wanting to talk - but Carl is focused on something they’re readi
 
 ALKA: So...anything interesting happen today?
 
-Carl stays playing on their phone - it doesn’t seem like they
-heard him. Alka shrugs and goes back to eating.
+Carl stays playing on their phone - it doesn’t seem like they heard him. Alka shrugs and goes back to eating.
 
 [[Earlier that week, in Central Park...->44]]
 
@@ -1837,8 +1835,7 @@ Recitation has ended, and Josh is packing up his laptop at the lectern. Students
 
 Jenn and Alka are leaving.
 
-JENN(text-colour:grey)[ (to Yinan)]: Hey, I booked a study room in the library. Do you wanna work on the
-homework with us?
+JENN(text-colour:grey)[ (to Yinan)]: Hey, I booked a study room in the library. Do you wanna work on the homework with us?
 
 YINAN: You guys go without me. I’ll catch up with you later. Jenn and Alka share a look.
 
@@ -1879,7 +1876,7 @@ Yinan does a double take.
 
 YINAN: Oh.
 
-(text-colour:grey)[(firmly) ]My name in America is still Yinan.
+(text-colour:grey)[(firmly)]My name in America is still Yinan.
 
 JOSH: Oh. Okay - Yi...nan.
 

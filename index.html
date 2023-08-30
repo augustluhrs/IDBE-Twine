@@ -3,24 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>v2_Backend</title>
+<title>IDBE Twine Test</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}.debug-mode tw-open-button[replay]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0) 0%, hsla(14deg, 100%, 87%, 0.25) 50%, hsla(14deg, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0.25) 0%, hsla(14deg, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0) 0%, hsla(14deg, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:10em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .4rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play v2_Backend.</tw-noscript></noscript></tw-story>
-<!-- UUID://2632131C-87D4-441B-AAC5-4641D338507D// --><tw-storydata name="v2_Backend" startnode="65" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="2632131C-87D4-441B-AAC5-4641D338507D" zoom="1" format="Harlowe" format-version="3.3.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">// if (!window.harlowe){
-// 	window.harlowe = {"State": State};
-// }</script><tw-passagedata pid="1" name="1" tags="" position="575,700" size="100,100">&lt;!-- DB CODE START --&gt;
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play IDBE Twine Test.</tw-noscript></noscript></tw-story>
+<!-- UUID://2632131C-87D4-441B-AAC5-4641D338507D// --><tw-storydata name="IDBE Twine Test" startnode="67" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="2632131C-87D4-441B-AAC5-4641D338507D" zoom="1" format="Harlowe" format-version="3.3.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="PostToSheet" tags="" position="100,100" size="100,100">(set: $date to (current-date:))
+(set: $time to (current-time:))
 (set: $path to (history:))
-
 &lt;script&gt;
-console.log($date);
-console.log($path);
-&lt;/script&gt;
-&lt;!-- DB CODE END --&gt;
-
-ILSI: Looking for something?
+  //using &quot;display&quot; macro hack since global functions don&#39;t really work in Harlowe
+  fetch(&#39;https://sheetdb.io/api/v1/czosjrv1cseoi?sheet=StudentLogs&#39;, {
+    method: &#39;POST&#39;,
+    headers: {
+      &#39;Accept&#39;: &#39;application/json&#39;,
+      &#39;Content-Type&#39;: &#39;application/json&#39;,
+      &#39;Authorization&#39;: &#39;Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin&#39; //TODO remove this and add new token to .env on glitch
+    },
+    body: JSON.stringify({
+      data: [
+        {
+          &#39;NETID&#39;: $netID,
+          &#39;NAME&#39;: $name,
+          &#39;DATE&#39;: $date,
+          &#39;START&#39;: $startTime,
+          &#39;TIME&#39;: $time,
+          &#39;PATH&#39;: $path,
+          &#39;FEEDBACK&#39;: $feedback
+        }
+      ]
+    })
+  })
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; console.log(data));
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="2" name="UpdateSheet" tags="" position="225,100" size="100,100">(set: $time to (current-time:))
+(set: $path to (history:))
+&lt;script&gt;
+  //using &quot;display&quot; macro hack since global functions don&#39;t really work in Harlowe
+  fetch(`https://sheetdb.io/api/v1/czosjrv1cseoi/NETID/${$netID}?sheet=StudentLogs`, {
+    method: &#39;PATCH&#39;,
+    headers: {
+      &#39;Accept&#39;: &#39;application/json&#39;,
+      &#39;Content-Type&#39;: &#39;application/json&#39;,
+      &#39;Authorization&#39;: &#39;Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin&#39; //TODO remove this and add new token to .env on glitch
+    },
+    body: JSON.stringify({
+      data: 
+      {
+        &#39;TIME&#39;: $time,
+        &#39;PATH&#39;: $path,
+        &#39;FEEDBACK&#39;: $feedback
+      }
+    })
+  })
+    .then((response) =&gt; response.json())
+    .then((data) =&gt; console.log(data));
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="3" name="1" tags="" position="575,700" size="100,100">ILSI: Looking for something?
 
 JENN: Oh, thank you so much, yes! I’m looking for this place.
 
@@ -32,11 +71,11 @@ JENN: Thank you! What year are you in?
 
 ILSI: I’m actually a freshman, too. But both my parents are alumni, so I pretty much grew up here and around Washington Square.
 
-JENN: That’s so cool! [[My name is--&gt;2]]</tw-passagedata><tw-passagedata pid="2" name="10" tags="" position="575,1825" size="100,100">JENN (whispering): You know, if you’re looking for good food, the place to go is Queens.
+JENN: That’s so cool! [[My name is--&gt;2]]</tw-passagedata><tw-passagedata pid="4" name="10" tags="" position="575,1825" size="100,100">JENN (whispering): You know, if you’re looking for good food, the place to go is Queens.
 
-ALKA:Oh yeah?
+ALKA: Oh yeah?
 
-JENN:Definitely. You can get anything there. There’s Chinese...
+JENN: Definitely. You can get anything there. There’s Chinese...
 (text-colour:grey)[(gesturing at Yinan)]
 There’s Indian...Pakistani??
 (text-colour:grey)[(gesturing at Alka)]
@@ -66,29 +105,27 @@ ALKA: Tibetan food sounds interesting. Carl, wanna go?
 
 CARL (text-colour:grey)[(seeing Alka want to go)]: Ugh... okay...
 
-Then Jenn notices a girl sitting a few rows back: Ilsi, who helped Jenn earlier, [[is right there.-&gt;11]]</tw-passagedata><tw-passagedata pid="3" name="11" tags="" position="575,1950" size="100,100">JENN: Hold on, let me ask if my friend Ilsi wants to come, too!
+Then Jenn notices a girl sitting a few rows back: Ilsi, who helped Jenn earlier, [[is right there.-&gt;11]]</tw-passagedata><tw-passagedata pid="5" name="11" tags="" position="575,1950" size="100,100">JENN: Hold on, let me ask if my friend Ilsi wants to come, too!
 
 Jenn waves at Ilsi with a lot of enthusiasm.
 
 JENN (text-colour:grey)[(calling out across the rows)]: Hey Ilsi!
 
-Ilsi waves back, somewhat hesitantly but charmed by Jenn’s
-enthusiasm nonetheless.
+Ilsi waves back, somewhat hesitantly but charmed by Jenn’s enthusiasm nonetheless.
 
 ILSI (text-colour:grey)[(doesn’t actually know Jenn’s name)]: Oh, hey... you!
 
 Lights come up on the stage. An NYU welcome ambassador approaches the podium.
 
-AMBASSADOR: Good morning, students! [[Welcome to...-&gt;12]]</tw-passagedata><tw-passagedata pid="4" name="12" tags="" position="575,2075" size="100,100">=&gt;&lt;= 
-[[&#39;&#39;&#39;&#39;Spaces of Possibility&#39;&#39;&#39;&#39;-&gt;OPENING-CREDITS]]</tw-passagedata><tw-passagedata pid="5" name="13" tags="" position="800,2325" size="100,100">JOSH: We know that behind two of these doors is a goat, and behind the other door is a brand-new car. 
+AMBASSADOR: Good morning, students! [[Welcome to...-&gt;12]]</tw-passagedata><tw-passagedata pid="6" name="12" tags="" position="575,2075" size="100,100">=&gt;&lt;= 
+[[&#39;&#39;&#39;&#39;Spaces of Possibility&#39;&#39;&#39;&#39;-&gt;OPENING-CREDITS]]</tw-passagedata><tw-passagedata pid="7" name="13" tags="" position="800,2325" size="100,100">JOSH: We know that behind two of these doors is a goat, and behind the other door is a brand-new car. 
 (text-colour:grey)[(scanning the class)] Jenn! Which door should we open?
 
 JENN: Let’s do...door number two.
 
 JOSH: Okay, but before we open door two. I’m gonna show you what’s behind door number one.
 
-Josh presses a key on his laptop, modifying his smartboard
-drawing:
+Josh presses a key on his laptop, modifying his smartboard drawing:
 
 JOSH: Knowing that there’s a goat behind number one, do you still want to open door number two? Or is it a better idea to switch to door number three instead?
 
@@ -98,7 +135,7 @@ JOSH: Interesting choice!
 
 (text-colour:grey)[(addressing Yinan)]: Yeen-an! What do you think? Is Jenn right to switch? And if so, why?
 
-[[Next-&gt;14]]</tw-passagedata><tw-passagedata pid="6" name="14" tags="" position="800,2450" size="100,100">Yinan looks back at Josh pleasantly, not understanding that he’s speaking to her. She’s waiting for “Yin-an” to answer the question.
+[[Next-&gt;14]]</tw-passagedata><tw-passagedata pid="8" name="14" tags="" position="800,2450" size="100,100">Yinan looks back at Josh pleasantly, not understanding that he’s speaking to her. She’s waiting for “Yin-an” to answer the question.
 
 JOSH: Yeen-an?
 
@@ -106,14 +143,13 @@ Jenn, uncomfortable, watches Yinan just sitting there for a beat, then finally n
 
 JENN (text-colour:grey)[(leaning towards Yinan, whispering)]: I think he’s talking to you...
 
-We linger on Yinan looking at Jenn with confusion - then she
-visibly realizes that //she’s// “Yin-an.”
+We linger on Yinan looking at Jenn with confusion - then she visibly realizes that //she’s// “Yin-an.”
 
 [[Yinan firmly brings it up now-&gt;TA-C1a]]
 
-[[Yinan frowns and resolves to bring it up privately later-&gt;TA-C1b]]</tw-passagedata><tw-passagedata pid="7" name="15" tags="" position="800,2700" size="100,100">A Month Ago:
+[[Yinan frowns and resolves to bring it up privately later-&gt;TA-C1b]]</tw-passagedata><tw-passagedata pid="9" name="15" tags="" position="800,2700" size="100,100">(text-colour:grey)[The next class:]
 
-(text-colour:grey)[Josh is focused on the first few rows of students, Yinan, Jenn, and Alka in particular.
+Josh is focused on the first few rows of students, Yinan, Jenn, and Alka in particular.]
 
 JOSH: What’s the difference between a function and a parameter?
 
@@ -125,26 +161,24 @@ JOSH: Daniel!
 The students lower their hands, and a male student (Daniel)
 goes to speak...
 
-[[Fast forward a week later-&gt;16]]</tw-passagedata><tw-passagedata pid="8" name="16" tags="" position="800,2825" size="100,100">Three Weeks Ago:
-
-(text-colour:grey)[JOSH: Why is using the global statement a bad practice? Not just here, but in general?
+[[Fast forward a week later-&gt;16]]</tw-passagedata><tw-passagedata pid="10" name="16" tags="" position="800,2825" size="100,100">JOSH: Why is using the global statement a bad practice? Not just here, but in general?
 
 Yinan and noticeably fewer students raise their hands this time. Josh scans for someone to call on once again...
 
-JOSH: Brianna!]
+JOSH: Brianna!
 
-[[Fast forward another week-&gt;17]]</tw-passagedata><tw-passagedata pid="9" name="17" tags="" position="800,2950" size="100,100">Once again:
+[[Fast forward another week-&gt;17]]</tw-passagedata><tw-passagedata pid="11" name="17" tags="" position="800,2950" size="100,100">Once again:
 
-(text-colour:grey)[JOSH: Who can remind us what an enumeration is?
+JOSH: Who can remind us what an enumeration is?
 
 This time it’s just Yinan and two other students raising
 their hands...
 
-JOSH: Marcus!]
+JOSH: Marcus!
 
-[[Last week-&gt;18]]</tw-passagedata><tw-passagedata pid="10" name="18" tags="" position="800,3075" size="100,100">And finally:
+[[Last week-&gt;18]]</tw-passagedata><tw-passagedata pid="12" name="18" tags="" position="800,3075" size="100,100">And finally:
 
-(text-colour:grey)[JOSH: Why isn’t the program compiling?
+JOSH: Why isn’t the program compiling?
 
 We’re down to only Yinan, looking deflated, halfheartedly
 raising her hand much lower than before...
@@ -167,9 +201,9 @@ YINAN (guiding him, whispering again): ...an f for the float...
 
 ALKA (to Josh, more confidently): It’s missing an f for the float.
 
-JOSH: Great, let’s see what happens when we put that in...]
+JOSH: Great, let’s see what happens when we put that in...
 
-[[Back to the present-&gt;19]]</tw-passagedata><tw-passagedata pid="11" name="19" tags="" position="800,3200" size="100,100">Alka, Jenn, and Yinan leave the classroom wearing different moods on their faces - Alka’s looking relieved, Jenn’s feeling good...but Yinan seems troubled by something.
+[[Back to the present-&gt;19]]</tw-passagedata><tw-passagedata pid="13" name="19" tags="" position="800,3200" size="100,100">Alka, Jenn, and Yinan leave the classroom wearing different moods on their faces - Alka’s looking relieved, Jenn’s feeling good...but Yinan seems troubled by something.
 
 ALKA: Thank you, Yinan - you really saved me there!
 
@@ -181,7 +215,7 @@ ALKA: I’m a bit concerned about Yinan...
 
 JENN: Me, too. But I don’t know if we should say anything?
 
-ALKA (sighs): [[I don’t know, either.-&gt;20]]</tw-passagedata><tw-passagedata pid="12" name="2" tags="" position="575,825" size="100,100">ILSI’S ROOMMATE: Ilsi! There you are!
+ALKA (sighs): [[I don’t know, either.-&gt;20]]</tw-passagedata><tw-passagedata pid="14" name="2" tags="" position="575,825" size="100,100">ILSI’S ROOMMATE: Ilsi! There you are!
 
 ILSI (text-colour:grey)[(to roommate)]: Oh hey!
 
@@ -193,9 +227,9 @@ JENN (text-colour:grey)[(to self)]: Bye Ilsi, I’m Jenn...
 
 Alone again, Jenn watches other students and New Yorkers passing by, all of them laughing and talking in pairs and small groups.
 
-JENN: How does everyone have friends already?? (text-colour:grey)[(sigh)] [[Commuting sucks...-&gt;3]]</tw-passagedata><tw-passagedata pid="13" name="20" tags="" position="800,3325" size="100,100">In her dorm room, Yinan opens Albert on her computer to check her midterm grade. She got an A-, and she’s not thrilled about it. She shakes her head and opens her school email. There is an email from Josh waiting for her with //&quot;Midterm Grade Breakdown - Yinan&quot;// in the subject line.
+JENN: How does everyone have friends already?? (text-colour:grey)[(sigh)] [[Commuting sucks...-&gt;3]]</tw-passagedata><tw-passagedata pid="15" name="20" tags="" position="800,3325" size="100,100">In her dorm room, Yinan opens Albert on her computer to check her midterm grade. She got an A-, and she’s not thrilled about it. She shakes her head and opens her school email. There is an email from Josh waiting for her with //&quot;Midterm Grade Breakdown - Yinan&quot;// in the subject line.
 
-[[She clicks open the email...-&gt;21]]</tw-passagedata><tw-passagedata pid="14" name="21" tags="" position="800,3450" size="100,100">Yinan, Jenn, Carl, and Alka are sitting together at a table, having lunch.
+[[She clicks open the email...-&gt;21]]</tw-passagedata><tw-passagedata pid="16" name="21" tags="" position="800,3450" size="100,100">Yinan, Jenn, Carl, and Alka are sitting together at a table, having lunch.
 
 ALKA (text-colour:grey)[(gesturing with enthusiasm)]: I can’t believe I got an A!
 
@@ -213,9 +247,7 @@ Carl doesn’t know the whole story, but it doesn’t sound good.
 
 CARL (text-colour:grey)[(wincing)]: Oof, sorry...
 
-YINAN(text-colour:grey)[ (sighs)]: Thanks. It just feels really unfair because of the whole Josh situation.
-
-Really lonely, too, like, why am I the only person who has to deal with this?
+YINAN(text-colour:grey)[ (sighs)]: Thanks. It just feels really unfair because of the whole Josh situation. Really lonely, too, like, why am I the only person who has to deal with this?
 
 Jenn and Alka squirm uncomfortably.
 
@@ -231,7 +263,7 @@ CARL: What’s been going on with Yinan?
 
 Alka and Jenn sigh.
 
-JENN: [[So...-&gt;22]]</tw-passagedata><tw-passagedata pid="15" name="22" tags="" position="800,3575" size="100,100">We are still at the same table, and Jenn has finished explaining.
+JENN: [[So...-&gt;22]]</tw-passagedata><tw-passagedata pid="17" name="22" tags="" position="800,3575" size="100,100">We are still at the same table, and Jenn has finished explaining.
 
 JENN: I wish I had done something.
 
@@ -239,7 +271,7 @@ ALKA: Yeah, same...
 
 CARL: So what about doing something now?
 
-[[The next day-&gt;23]]</tw-passagedata><tw-passagedata pid="16" name="23" tags="" position="800,3700" size="100,100">Yinan and Kevin walk out of the Jacobs building.
+[[The next day-&gt;23]]</tw-passagedata><tw-passagedata pid="18" name="23" tags="" position="800,3700" size="100,100">Yinan and Kevin walk out of the Jacobs building.
 
 KEVIN: Wait, then what’s your grade?
 
@@ -269,9 +301,9 @@ YINAN (text-colour:grey)[(smiles)]: Right? Thanks for the validation.
 
 KEVIN: You’re welcome!
 
-[[Later, in Yinan&#39;s dorm room...-&gt;24]]</tw-passagedata><tw-passagedata pid="17" name="24" tags="" position="800,3825" size="100,100">A door with a name tag reading “Yinan” with cute hand-drawn doodles on it. Yinan enters the hallway and finds Alka, Jenn, and Carl sitting on the floor outside of Yinan room.
+[[Later, in Yinan&#39;s dorm room...-&gt;24]]</tw-passagedata><tw-passagedata pid="19" name="24" tags="" position="800,3825" size="100,100">A door with a name tag reading “Yinan” with cute hand-drawn doodles on it. Yinan enters the hallway and finds Alka, Jenn, and Carl sitting on the floor outside of Yinan room.
 
-YINAN (surprised to see her friends here): Oh, hey friends! What are you doing
+YINAN (text-color: grey)[surprised to see her friends here]: Oh, hey friends! What are you doing
 here?
 
 JENN: We were hoping to run into you!
@@ -290,8 +322,7 @@ JENN: You’re welcome!
 
 ALKA: Of course!
 
-CARL: Yeah Yinan, I only know what Jenn and Alka told me about what happened. But I also know what it feels like to have someone address you in a way that doesn’t reflect
-your identity. I’m so sorry you’ve been dealing with this.
+CARL: Yeah Yinan, I only know what Jenn and Alka told me about what happened. But I also know what it feels like to have someone address you in a way that doesn’t reflect your identity. I’m so sorry you’ve been dealing with this.
 
 YINAN: Thank you, Carl. I really appreciate that.
 
@@ -313,7 +344,7 @@ JENN: Wait, really?
 
 CARL: Yep.
 
-YINAN: You know what? I would love to [[talk to her.-&gt;25]]</tw-passagedata><tw-passagedata pid="18" name="25" tags="" position="800,3950" size="100,100">In a classroom the next day, students pack up their stuff as class ends. Alanna is at the front, typing something on her laptop. One of her students, Isaac, approaches her.
+YINAN: You know what? I would love to [[talk to her.-&gt;25]]</tw-passagedata><tw-passagedata pid="20" name="25" tags="" position="800,3950" size="100,100">In a classroom the next day, students pack up their stuff as class ends. Alanna is at the front, typing something on her laptop. One of her students, Isaac, approaches her.
 
 ISAAC: Hey Alanna, can I ask you something?
 
@@ -343,7 +374,7 @@ ISAAC: Oh, okay...thanks.
 
 Isaac leaves, clearly annoyed. Alanna watches him and exhales once he’s gone.
 
-[[Later at the cafe-&gt;26]]</tw-passagedata><tw-passagedata pid="19" name="26" tags="" position="800,4075" size="100,100">Yinan, Jenn, Alka, Carl, and Alanna sit at a table. All of them have a coffee drink in front of them.
+[[Later at the cafe-&gt;26]]</tw-passagedata><tw-passagedata pid="21" name="26" tags="" position="800,4075" size="100,100">Yinan, Jenn, Alka, Carl, and Alanna sit at a table. All of them have a coffee drink in front of them.
 
 ALANNA: Thank you for sharing your experience with me. What you’re describing is really inappropriate. Have you talked about it to anybody yet?
 
@@ -353,7 +384,7 @@ Alanna thinks about Yinan’s reason and says...
 
 [[”What about your academic advisor?”-&gt;TA-C2a]]
 
-[[”The professor can be a good resource.&quot;-&gt;TA-C2b]]</tw-passagedata><tw-passagedata pid="20" name="27" tags="" position="800,4325" size="100,100">Gabriel is working in front of his laptop when Josh, also working in the same office, asks him:
+[[”The professor can be a good resource.&quot;-&gt;TA-C2b]]</tw-passagedata><tw-passagedata pid="22" name="27" tags="" position="800,4325" size="100,100">Gabriel is working in front of his laptop when Josh, also working in the same office, asks him:
 
 JOSH: I’m getting coffee. Do you want anything from the kitchen?
 
@@ -386,7 +417,7 @@ well.
 
 ISAAC (text-colour:grey)[(scoffs)]: Alanna told me she couldn&#39;t even understand it.
 
-JOSH (peering at Isaac): Wait, I’m confused - are you saying that about Alanna? Because for sure the way you&#39;re naming things in your code makes it harder to understand. Like, what does &quot;g67&quot; refer to here?
+JOSH (text-color:grey)[peering at Isaac]: Wait, I’m confused - are you saying that about Alanna? Because for sure the way you&#39;re naming things in your code makes it harder to understand. Like, what does &quot;g67&quot; refer to here?
 
 ISAAC: Uhh, that&#39;s the monthly income variable.
 
@@ -410,7 +441,7 @@ ISAAC (text-colour:grey)[(chastened)]: Okay. I will. Thank you.
 
 Josh watches Isaac leave with a perplexed expression, makes his coffee and goes back to his desk. Gabriel pokes his head out of the office room. He looks equally perplexed.
 
-[[Next-&gt;28]]</tw-passagedata><tw-passagedata pid="21" name="28" tags="" position="800,4450" size="100,100">Alanna enters the office space with a heavy sigh.
+[[Next-&gt;28]]</tw-passagedata><tw-passagedata pid="23" name="28" tags="" position="800,4450" size="100,100">Alanna enters the office space with a heavy sigh.
 
 GABRIEL: What a sigh. Is everything okay?
 
@@ -442,7 +473,7 @@ GABRIEL: You’re welcome! And you know, if you’d like to talk about this stuf
 
 ALANNA: Thank you.
 
-[[Josh enters the room as Gabriel leaves-&gt;29]]</tw-passagedata><tw-passagedata pid="22" name="29" tags="" position="800,4575" size="100,100">JOSH: ‘sup Alanna!
+[[Josh enters the room as Gabriel leaves-&gt;29]]</tw-passagedata><tw-passagedata pid="24" name="29" tags="" position="800,4575" size="100,100">JOSH: ‘sup Alanna!
 
 ALANNA: Oh hey.
 
@@ -475,36 +506,36 @@ JOSH (uncomfortable, knowing where this is heading): I do, yeah.
 
 ALANNA: Because I had a student approach me with some concerns...
 
-[[END OF ACT ONE. ON TO ACT II.-&gt;S2-GROUPWORK]]</tw-passagedata><tw-passagedata pid="23" name="3" tags="" position="575,950" size="100,100">Jenn now sits in a chair with empty seats on both sides in the NYU auditorium, waiting for student orientation to begin.
+[[END OF ACT ONE. ON TO ACT II.-&gt;S2-GROUPWORK]]</tw-passagedata><tw-passagedata pid="25" name="3" tags="" position="575,950" size="100,100">Jenn now sits in a chair with empty seats on both sides in the NYU auditorium, waiting for student orientation to begin.
 
 A student enters Jenn’s aisle and she immediately brightens, smiling and waving at him.
 
 JENN: Hi! Feel free to sit here!
 
-But the student doesn’t notice her and walks straight down the aisle, greeting another student. Jenn watches them with [[an awkward expression.-&gt;4]]</tw-passagedata><tw-passagedata pid="24" name="30" tags="" position="1050,4700" size="100,100">PRAKESH: And how&#39;s your first semester coming along, Alka?
+But the student doesn’t notice her and walks straight down the aisle, greeting another student. Jenn watches them with [[an awkward expression.-&gt;4]]</tw-passagedata><tw-passagedata pid="26" name="30" tags="" position="1050,4700" size="100,100">PRAKESH: And how&#39;s your first semester coming along, Alka?
 
 ALKA: It&#39;s going good, Papa. There&#39;s a lot of work, but I&#39;m managing.
 
-PRAKESH (squinting and leaning in): Is that your violin on your shoulder, Alka?
+PRAKESH: (text-color:grey)[squinting and leaning in]: Is that your violin on your shoulder, Alka?
 
-ALKA: Yeah, Papa. I was just jamming with some [[friends-&gt;31]].</tw-passagedata><tw-passagedata pid="25" name="31" tags="" position="1050,4825" size="100,100">PRAKESH (raising an eyebrow): “Jamming”?
+ALKA: Yeah, Papa. I was just jamming with some [[friends-&gt;31]].</tw-passagedata><tw-passagedata pid="27" name="31" tags="" position="1050,4825" size="100,100">PRAKESH (text-color:grey)[raising an eyebrow]: “Jamming”?
 
 ALKA: Yes, Papa. Like playing music with friends just for fun.
 
 PRAKESH: I hope you aren’t letting all this  fun distract you from your studies. You’re in school to get good grades and a stable job - Alka? Are you there?
 
-ALKA (aiming his phone camera back at his face): Sorry, Papa, I stumbled. I was going to say the jamming is actually somewhat related to my studies - I’m working on a group project where we have to design a new kind of musical instrument. So this... jamming, it gives me ideas.
+ALKA (text-color:grey)[aiming his phone camera back at his face]: Sorry, Papa, I stumbled. I was going to say the jamming is actually somewhat related to my studies - I’m working on a group project where we have to design a new kind of musical instrument. So this... jamming, it gives me ideas.
 
-Prakesh nods, looking thoughtful and reassured. Just then, Alka passes by an ELEVATOR leading to the subway station. A sign taped to it reads &#39;OUT OF ORDER&#39;. Alka notices a wheelchair-bound man at the top of the nearby stairs leading to the subway. A good samaritan stands with her hands on the handlebars to the man’s wheelchair looking anxious and scanning the crowd, obviously searching for someone to [[help-&gt;32]].</tw-passagedata><tw-passagedata pid="26" name="32" tags="" position="1050,4950" size="100,100">GOOD SAMARITAN: Excuse me, would you be able to -
+Prakesh nods, looking thoughtful and reassured. Just then, Alka passes by an ELEVATOR leading to the subway station. A sign taped to it reads &#39;OUT OF ORDER&#39;. Alka notices a wheelchair-bound man at the top of the nearby stairs leading to the subway. A good samaritan stands with her hands on the handlebars to the man’s wheelchair looking anxious and scanning the crowd, obviously searching for someone to [[help-&gt;32]].</tw-passagedata><tw-passagedata pid="28" name="32" tags="" position="1050,4950" size="100,100">GOOD SAMARITAN: Excuse me, would you be able to -
 
 ALKA: You need help getting down the stairs?
-(to Prakesh): Papa, I need to go. There&#39;s someone here who needs my help.
+(text-color:grey)[to Prakesh:] Papa, I need to go. There&#39;s someone here who needs my help.
 
 PRAKESH: Of course, son. We&#39;ll talk later.
 
 Alka ends the call, slides his phone into his pocket, and rushes over to offer his assistance.
 
-[[Later, on the Herald Sq subway platform-&gt;33]]</tw-passagedata><tw-passagedata pid="27" name="33" tags="" position="1050,5075" size="100,100">Alka stands on the subway platform, still wearing his violin case on his shoulder. He&#39;s lost in thought with his eyes closed, perhaps reliving the joy of his jamming session.
+[[Later, on the Herald Sq subway platform-&gt;33]]</tw-passagedata><tw-passagedata pid="29" name="33" tags="" position="1050,5075" size="100,100">Alka stands on the subway platform, still wearing his violin case on his shoulder. He&#39;s lost in thought with his eyes closed, perhaps reliving the joy of his jamming session.
 
 Suddenly, the platform resonates with sound of beautiful, unexpected musical notes chiming. Alka looks up, surprised, his eyes following the sound to an installation overhead: a long, rectangular urban musical instrument running the length of the platform. A woman is walking down the opposite platform her hand raised high and engaging each of the sensors as she goes, triggering melodies along Alka’s side.
 
@@ -514,7 +545,7 @@ The man and Alka exchange a smile. The man then points up at the musical instrum
 
 Alka sees this. An idea sparking in his eyes, he retrieves a notebook and a pen from his violin case. He starts to sketch, the notes of REACH providing a soundtrack to his inspiration. As Alka gets more and more engrossed in his design, we...
 
-[[See, later, in Dibner Library...-&gt;34]]</tw-passagedata><tw-passagedata pid="28" name="34" tags="" position="1050,5200" size="100,100">Alka, Carl, Ilsi, and Yinan sit around the desk looking varying degrees of frustrated. There are scrunched up balls of paper littering the table and floor, and the whiteboard reads:
+[[See, later, in Dibner Library...-&gt;34]]</tw-passagedata><tw-passagedata pid="30" name="34" tags="" position="1050,5200" size="100,100">Alka, Carl, Ilsi, and Yinan sit around the desk looking varying degrees of frustrated. There are scrunched up balls of paper littering the table and floor, and the whiteboard reads:
 
 (text-colour:orange)[ACCESSIBLE MUSICAL INSTRUMENT DESIGN IDEAS:
 Jacket that plays music when you move
@@ -523,7 +554,7 @@ Eye tracking interface
 Photosensor
 Ultrasonic sensor]
 
-[[The group sadly sits there-&gt;35]]</tw-passagedata><tw-passagedata pid="29" name="35" tags="" position="1050,5325" size="100,100">CARL: Ughh, why is this so hard??
+[[The group sadly sits there-&gt;35]]</tw-passagedata><tw-passagedata pid="31" name="35" tags="" position="1050,5325" size="100,100">CARL: Ughh, why is this so hard??
 
 Alka, staring grimly at the desk with his head in his hands:
 
@@ -535,13 +566,13 @@ ILSI: Wait, who put you in charge?
 
 ALKA: Someone has to step up or we’re never going to make any progress. And not for nothing, but I’ve been playing music my whole life.
 
-CARL (to Yinan and Ilsi): He’s really good at violin.
+CARL (text-color:grey)[to Yinan and Ilsi]: He’s really good at violin.
 
 ALKA: Piano too.
 
 ILSI: That’s great, but -
 
-YINAN (quickly): I vote for Alka!
+YINAN (text-color:grey)[quickly]: I vote for Alka!
 
 Alka, Ilsi, and Yinan look to Carl, who’s suddenly in a tough spot.
 
@@ -551,9 +582,9 @@ ILSI: You don’t have to vote for him just because he’s your roommate.
 
 Time to make a decision.
 
-[[Alka: ”Let’s just do the ultrasonic sensor thing”-&gt;GRP_C1A]]
+[[Alka: ”Let’s just do the ultrasonic sensor thing”-&gt;GRP-C1A]]
 
-[[Alka: ”What do you think we should do instead?”-&gt;GRP_C1B]]</tw-passagedata><tw-passagedata pid="30" name="36" tags="" position="1050,5575" size="100,100">Ilsi, Carl, and Yinan have gathered around a table. Parts and materials for the project scatter around.
+[[Alka: ”What do you think we should do instead?”-&gt;GRP-C1B]]</tw-passagedata><tw-passagedata pid="32" name="36" tags="" position="1050,5575" size="100,100">Ilsi, Carl, and Yinan have gathered around a table. Parts and materials for the project scatter around.
 
 Alka shows up and whips out an unusual homemade device. It consists of an ultrasonic sensor, an lcd screen, and a big touchpad button, all housed in a pencil case.
 
@@ -574,9 +605,9 @@ ALKA: I was just trying to help the group get this thing done, for all of us.
 YINAN: Okay, but I thought we were going to talk about how to approach it today.
 (Shows a folder of drawings) I came up with a bunch of designs I thought we could discuss.
 
-[[ALKA: ”I don’t think we want to get too crazy with designs. Let me play mine for you.”-&gt;GRP_C2A]]
+[[ALKA: ”I don’t think we want to get too crazy with designs. Let me play mine for you.”-&gt;GRP-C2A]]
 
-[[ALKA: ”Maybe we can combine your ideas with what I built. Can I show you how it works?”-&gt;GRP_C2B]]</tw-passagedata><tw-passagedata pid="31" name="37" tags="" position="1050,5825" size="100,100">Alka puts the prototype down and starts explaining. He points to the various design elements:
+[[ALKA: ”Maybe we can combine your ideas with what I built. Can I show you how it works?”-&gt;GRP-C2B]]</tw-passagedata><tw-passagedata pid="33" name="37" tags="" position="1050,5825" size="100,100">Alka puts the prototype down and starts explaining. He points to the various design elements:
 
 ALKA (text-colour:grey)[(pointing to the sensor)]: This is the sensor. It translates the distance of your hand, or your arm, whatever, to musical notes.
 (text-colour:grey)[(points to the screen) ]You can see what note you’re playing on the screen.
@@ -655,7 +686,7 @@ ILSI: I’m not sure yet. Could I see the code? Maybe we can tweak it a bit.
 
 ALKA: Tweak it? You know what? Fine, I’ll post it on GitHub. If you can find anything that needs tweaking in my code, let me know.
 
-[[At Dibner library the next day...-&gt;38]]</tw-passagedata><tw-passagedata pid="32" name="38" tags="" position="1050,5950" size="100,100">Ilsi is at one of the Dibner library desks, scrolling through the instrument’s code on her laptop. She pauses at a section of code defining the chromatic musical scale.
+[[At Dibner library the next day...-&gt;38]]</tw-passagedata><tw-passagedata pid="34" name="38" tags="" position="1050,5950" size="100,100">Ilsi is at one of the Dibner library desks, scrolling through the instrument’s code on her laptop. She pauses at a section of code defining the chromatic musical scale.
 
 ILSI: Hmm...
 
@@ -667,7 +698,7 @@ YINAN: So you couldn’t really sound bad! We could make it so you just turn a c
 
 ILSI: Yes, perfect! Let’s add it in!
 
-[[In Alka and Carl&#39;s dorm room...-&gt;39]]</tw-passagedata><tw-passagedata pid="33" name="39" tags="" position="1050,6075" size="100,100">Alka and Carl are doing schoolwork independently from each other. Alka is coding on his laptop. He tries to push his code to main, but terminal gives him a series of errors. The
+[[In Alka and Carl&#39;s dorm room...-&gt;39]]</tw-passagedata><tw-passagedata pid="35" name="39" tags="" position="1050,6075" size="100,100">Alka and Carl are doing schoolwork independently from each other. Alka is coding on his laptop. He tries to push his code to main, but terminal gives him a series of errors. The
 confused look on Alka’s face gives way to annoyance.
 
 ALKA: What the hell??
@@ -680,16 +711,19 @@ CARL: You can always revert? (off Alka, opening GitHub)...what are you doing?
 
 Alka types Yinan and Ilsi’s usernames into the ‘block a user’ field on GitHub, and pauses:
 
-[[”I’ll tell you in a sec.”-&gt;GRP_C3A]]
+[[”I’ll tell you in a sec.”-&gt;GRP-C3A]]
 
-[[”I’m blocking them.”-&gt;GRP_C3B]]</tw-passagedata><tw-passagedata pid="34" name="4" tags="" position="575,1075" size="100,100">Yinan, in some strange clothes, which can either be absolute garbage or the extreme of high fashion, approaches. She is holding a bag of shrimp
+[[”I’m blocking them.”-&gt;GRP-C3B]]</tw-passagedata><tw-passagedata pid="36" name="4" tags="" position="575,1075" size="100,100">{
+Yinan, in some strange clothes, which can either be absolute garbage 
+or the extreme of high fashion, approaches. She is holding a bag of shrimp
 chips, looking for a seat.
+}
 
 JENN: Hi! This seat isn’t taken! I’m Jenn!
 
 Jenn gestures at the seat next to her.
 
-YINAN (text-colour:grey)[(not sure why Jenn is so hyped up)]: [[Oh, thanks.-&gt;5]]</tw-passagedata><tw-passagedata pid="35" name="40" tags="" position="1050,6325" size="100,100">Ilsi and Yinan have a rudimentary, breadboard version of the prototype built out on Yinan’s desk - an ultrasonic sensor, LCD screen, button, and two potentiometers all wired to an Arduino.
+YINAN (text-colour:grey)[(not sure why Jenn is so hyped up)]: [[Oh, thanks.-&gt;5]]</tw-passagedata><tw-passagedata pid="37" name="40" tags="" position="1050,6325" size="100,100">Ilsi and Yinan have a rudimentary, breadboard version of the prototype built out on Yinan’s desk - an ultrasonic sensor, LCD screen, button, and two potentiometers all wired to an Arduino.
 
 ILSI (excited): Alright, let’s compile and see if it works!
 
@@ -713,7 +747,7 @@ But just then, Ilsi and Yinan’s phones buzz. Ilsi checks hers, and:
 
 ILSI: Wait, don’t send that - Carl said he spoke to Alka and they want us to meet at MakerSpace.
 
-[[At the Makerspace-&gt;42]]</tw-passagedata><tw-passagedata pid="36" name="41" tags="" position="1200,6325" size="100,100">Alka and Carl are huddled over Alka’s laptop, reviewing Yinan and Ilsi’s code.
+[[At the Makerspace-&gt;42]]</tw-passagedata><tw-passagedata pid="38" name="41" tags="" position="1200,6325" size="100,100">Alka and Carl are huddled over Alka’s laptop, reviewing Yinan and Ilsi’s code.
 
 CARL: I mean...this seems legit to me.
 
@@ -735,7 +769,7 @@ ALKA (a bit sheepish): Hey, thanks for slowing me down there. I think I was abou
 
 CARL: Don’t worry about it - and thanks for hearing me out. Let&#39;s go meet them.
 
-[[At the Makerspace-&gt;43]]</tw-passagedata><tw-passagedata pid="37" name="42" tags="" position="1050,6450" size="100,100">Outside the Makerspace, Yinan and Ilsi see Alka and Carl waiting for them. Alka has a remorseful expression. 
+[[At the Makerspace-&gt;43]]</tw-passagedata><tw-passagedata pid="39" name="42" tags="" position="1050,6450" size="100,100">Outside the Makerspace, Yinan and Ilsi see Alka and Carl waiting for them. Alka has a remorseful expression. 
 
 CARL: Hey, so I think Alka has something to say.
 
@@ -757,7 +791,7 @@ ILSI: Okay. I think we can all do a much better job working together and get a r
 
 YINAN: Yeah. Let&#39;s try tinkering around with this now and make it work!
 
-[[At the Makerspace-&gt;43]]</tw-passagedata><tw-passagedata pid="38" name="43" tags="" position="1050,6575" size="100,100">The gang are gathered around a table with a new and improved version of the prototype - basically the same as Alka’s original design, but with two knobs labeled &#39;scale&#39; and &#39;key&#39; added to it - connected to Alka’s laptop by a USB cable. He presses a button on the laptop, and the prototype’s screen lights up.
+[[At the Makerspace-&gt;43]]</tw-passagedata><tw-passagedata pid="40" name="43" tags="" position="1050,6575" size="100,100">The gang are gathered around a table with a new and improved version of the prototype - basically the same as Alka’s original design, but with two knobs labeled &#39;scale&#39; and &#39;key&#39; added to it - connected to Alka’s laptop by a USB cable. He presses a button on the laptop, and the prototype’s screen lights up.
 
 ALKA: I think we’re good to go.
 
@@ -791,7 +825,7 @@ YINAN: Yessss!
 
 As our friends congratulate Carl and each other, we...
 
-[[END ACT II. NEXT, ACT III...-&gt;S3-OFFCAMPUS]]</tw-passagedata><tw-passagedata pid="39" name="44" tags="" position="1350,6700" size="100,100">A sweeping aerial view of the meadow stretching endlessly on one of those rare and perfect “suns out, guns out” days of warmth, sunshine, and low humidity in NYC. 
+[[END ACT II. NEXT, ACT III...-&gt;S3-OFFCAMPUS]]</tw-passagedata><tw-passagedata pid="41" name="44" tags="" position="1350,6700" size="100,100">A sweeping aerial view of the meadow stretching endlessly on one of those rare and perfect “suns out, guns out” days of warmth, sunshine, and low humidity in NYC. 
 
 Amid all the joyful New Yorkers laying out on beach towels, having picnics, throwing frisbees, etc., we find Alanna and Carl sitting together on a picnic blanket. Carl is
 studying a physics textbook with their notebook and hoodie nearby, their highlighters and pens scattered about; Alanna has her laptop open, grading her students’ coding assignments. 
@@ -823,7 +857,7 @@ CARL: Maybe they’re showing off?
 
 ALANNA (frowning at her screen): Efficiency is a show-off in coding, not verbosity. I’ll have to note that down -
 
-Suddenly, a soft, fuzzy, day-glo tennis ball rolls over and bumps Carl’s knee. A nine year old girl is standing fifteen feet away with a Velcro catch paddle on her hand, her DAD standing further back with his own [[paddle.-&gt;45]]</tw-passagedata><tw-passagedata pid="40" name="45" tags="" position="1350,6825" size="100,100">GIRL: Excuse me, could you please -
+Suddenly, a soft, fuzzy, day-glo tennis ball rolls over and bumps Carl’s knee. A nine year old girl is standing fifteen feet away with a Velcro catch paddle on her hand, her DAD standing further back with his own [[paddle.-&gt;45]]</tw-passagedata><tw-passagedata pid="42" name="45" tags="" position="1350,6825" size="100,100">GIRL: Excuse me, could you please -
 
 Before she even finishes asking, Carl is on it, picking up the ball with a smile.
 
@@ -864,7 +898,7 @@ CARL: For sure.
 
 Carl packs everything into their backpack, plugs their airpods in, chooses their favorite playlist on Spotify, and sets off for school, waving goodbye to Alanna.
 
-[[Moments later, at the 59th St. Station turnstile-&gt;46]]</tw-passagedata><tw-passagedata pid="41" name="46" tags="" position="1350,6950" size="100,100">Carl’s hands touch their phone to the omny sensor, which beeps and turns white. They push the turnstile, but it doesn’t turn. They look at their phone and see an Apple Pay error message:
+[[Moments later, at the 59th St. Station turnstile-&gt;46]]</tw-passagedata><tw-passagedata pid="43" name="46" tags="" position="1350,6950" size="100,100">Carl’s hands touch their phone to the omny sensor, which beeps and turns white. They push the turnstile, but it doesn’t turn. They look at their phone and see an Apple Pay error message:
 
 (text-colour:orange)[APPLE PAY SERVICES ARE CURRENTLY UNAVAILABLE.
 PLEASE TRY AGAIN LATER]
@@ -873,7 +907,7 @@ Carl groans. They go to the Metrocard ATM and tap the $9 Fast Metrocard option. 
 
 SWIPE CARD AGAIN AT THIS TURNSTILE
 
-CARL: [[Okayyy...-&gt;47]]</tw-passagedata><tw-passagedata pid="42" name="47" tags="" position="1350,7075" size="100,100">Carl tries swiping again, and again, but no luck.
+CARL: [[Okayyy...-&gt;47]]</tw-passagedata><tw-passagedata pid="44" name="47" tags="" position="1350,7075" size="100,100">Carl tries swiping again, and again, but no luck.
 
 (text-colour:orange)[SWIPE CARD AGAIN AT THIS TURNSTILE]
 
@@ -885,9 +919,9 @@ LADY: Need some help?
 
 She’s holding the emergency gate open for Carl.
 
-[[CARL: ”Oh, no - I think I’m good.”-&gt;OFF_C1A]]
+[[CARL: ”Oh, no - I think I’m good.”-&gt;OFF-C1A]]
 
-[[CARL: ”Thank you so much!”-&gt;OFF_C1B]]</tw-passagedata><tw-passagedata pid="43" name="48" tags="" position="1350,7325" size="100,100">As Carl and the lady take a few steps away from the turnstile gate - two undercover transit officers appear and step between them.
+[[CARL: ”Thank you so much!”-&gt;OFF-C1B]]</tw-passagedata><tw-passagedata pid="45" name="48" tags="" position="1350,7325" size="100,100">As Carl and the lady take a few steps away from the turnstile gate - two undercover transit officers appear and step between them.
 
 One officer is male and white, the other female and black; each is dressed like a regular commuter, but they have badges pulled out and dangling from lanyards around their necks.
 
@@ -928,11 +962,11 @@ LADY: Sorry...
 
 As she scurries away, Carl looks around the station and sees people staring at them, as his heart pounds away.
 
-[[Minutes later...-&gt;49]]</tw-passagedata><tw-passagedata pid="44" name="49" tags="" position="1350,7450" size="100,100">Carl is squeezed into a packed car, standing and rocking with the motion of the train as they hold the pole with one hand and their ticket in the other.
+[[Minutes later...-&gt;49]]</tw-passagedata><tw-passagedata pid="46" name="49" tags="" position="1350,7450" size="100,100">Carl is squeezed into a packed car, standing and rocking with the motion of the train as they hold the pole with one hand and their ticket in the other.
 
 CARL: Un-f@#&amp;ing-believable...
 
-[[At the Jay St.-Metrotech Station-&gt;50]]</tw-passagedata><tw-passagedata pid="45" name="5" tags="" position="575,1200" size="100,100">Yinan sits down, leaving two seats between her and Jenn. She rips open the bag of shrimp chips. Munch. Munch.
+[[At the Jay St.-Metrotech Station-&gt;50]]</tw-passagedata><tw-passagedata pid="47" name="5" tags="" position="575,1200" size="100,100">Yinan sits down, leaving two seats between her and Jenn. She rips open the bag of shrimp chips. Munch. Munch.
 
 Jenn keeps looking at Yinan, but Yinan keeps eating chips.
 
@@ -942,7 +976,7 @@ YINAN: I’m Yinan.
 
 JENN: Hi Yinan!
 
-Two more students, Alka and Carl, come and sit down in between [[Jenn and Yinan.-&gt;6]]</tw-passagedata><tw-passagedata pid="46" name="50" tags="" position="1350,7575" size="100,100">As Carl ascends the stairs to exit the station, Carl checks their phone. The clock on their lock screen reads:
+Two more students, Alka and Carl, come and sit down in between [[Jenn and Yinan.-&gt;6]]</tw-passagedata><tw-passagedata pid="48" name="50" tags="" position="1350,7575" size="100,100">As Carl ascends the stairs to exit the station, Carl checks their phone. The clock on their lock screen reads:
 
 (text-colour:orange)[2:34 PM
 ]
@@ -951,15 +985,15 @@ And there’s a text notification from Kevin (saved in Carl’s contacts as Kevi
 
 (text-colour:orange)[wya?
 ]
-[[Exiting the Station-&gt;51]]</tw-passagedata><tw-passagedata pid="47" name="51" tags="" position="1350,7700" size="100,100">As Carl exits the station, a white male pedestrian crosses our path and makes “white face” at Carl (tight, closed-mouth smile with raised eyebrows)...
+[[Exiting the Station-&gt;51]]</tw-passagedata><tw-passagedata pid="49" name="51" tags="" position="1350,7700" size="100,100">As Carl exits the station, a white male pedestrian crosses our path and makes “white face” at Carl (tight, closed-mouth smile with raised eyebrows)...
 
-[[In front of the Jacobs building...-&gt;52]]</tw-passagedata><tw-passagedata pid="48" name="52" tags="" position="1350,7825" size="100,100">As we approach the front door of the building, Carl checks their phone again...
+[[In front of the Jacobs building...-&gt;52]]</tw-passagedata><tw-passagedata pid="50" name="52" tags="" position="1350,7825" size="100,100">As we approach the front door of the building, Carl checks their phone again...
 
 (text-colour:orange)[2:40 PM]
 
-[[CARL: ”Ugh, I’ll have to slide in late to class”-&gt;OFF_C2A]]
+[[CARL: ”Ugh, I’ll have to slide in late to class”-&gt;OFF-C2A]]
 
-[[CARL: ”Forget it, I’ll skip class today”-&gt;OFF_C2B]]</tw-passagedata><tw-passagedata pid="49" name="53" tags="" position="1350,8075" size="100,100">Half an hour later, Carl sits with a Word doc titled NOTES open on his laptop screen, but there’s no notes written on it.
+[[CARL: ”Forget it, I’ll skip class today”-&gt;OFF-C2B]]</tw-passagedata><tw-passagedata pid="51" name="53" tags="" position="1350,8075" size="100,100">Half an hour later, Carl sits with a Word doc titled NOTES open on his laptop screen, but there’s no notes written on it.
 
 The Professor is lecturing at the front of the classroom, but whatever she’s saying is washed out in his head.
 
@@ -975,7 +1009,7 @@ CARL: Uhh...I’m fine, it’s fine.
 
 KEVIN (whispering): Okay, well let me know if you need me to share notes. I got you.
 
-[[Later that day-&gt;OFF_C2B]]</tw-passagedata><tw-passagedata pid="50" name="54" tags="" position="1350,8200" size="100,100">ALKA: So...anything interesting happen today?
+[[Later that day-&gt;OFF-C2B]]</tw-passagedata><tw-passagedata pid="52" name="54" tags="" position="1350,8200" size="100,100">ALKA: So...anything interesting happen today?
 
 ...Carl keeps playing on their phone and not reacting. Alka shrugs and going back to his meal. They eat in awkward silence.
 
@@ -989,14 +1023,14 @@ CARL: Hm? No.
 
 After another few minutes of awkward silence,
 
-[[ALKA: ”Are you okay?”-&gt;OFF_C3A]]
+[[ALKA: ”Are you okay?”-&gt;OFF-C3A]]
 
-[[ALKA continues to eat in silence.-&gt;OFF_C3B]]</tw-passagedata><tw-passagedata pid="51" name="55" tags="" position="1350,8450" size="100,100">The camera hesitates on Carl’s blanketed form on their bed, then turns to the clock on Alka’s nightstand - it’s only 3:30 in the afternoon.
+[[ALKA continues to eat in silence.-&gt;OFF-C3B]]</tw-passagedata><tw-passagedata pid="53" name="55" tags="" position="1350,8450" size="100,100">The camera hesitates on Carl’s blanketed form on their bed, then turns to the clock on Alka’s nightstand - it’s only 3:30 in the afternoon.
 
 Alka stares after him, and ponders what to do.
 
-[[Ask directly-&gt;OFF_C4A]]
-[[Give them space-&gt;OFF_C4B]]</tw-passagedata><tw-passagedata pid="52" name="56" tags="" position="1350,8700" size="100,100">With Alka gone, the room is dark and silent.
+[[Ask directly-&gt;OFF-C4A]]
+[[Give them space-&gt;OFF-C4B]]</tw-passagedata><tw-passagedata pid="54" name="56" tags="" position="1350,8700" size="100,100">With Alka gone, the room is dark and silent.
 
 Carl’s hand eventually emerges from under the blanket and pats around their nightstand, searching...finally, they find their phone and pull it under the covers with them. He dials the phone.
 
@@ -1012,7 +1046,7 @@ ALANNA: So?
 
 CARL (sighs): You’ll never believe what happened after I left the park today...
 
-[[Later that night, in Carl and Alka&#39;s dorm room...-&gt;57]]</tw-passagedata><tw-passagedata pid="53" name="57" tags="" position="1350,8825" size="100,100">Alka opens the door and enters the room with quiet, considerate care, in case Carl is asleep - but instead he finds the lights on and Carl wrapped in their blanket like a burrito on the floor, playing a videogame on the TV.
+[[Later that night, in Carl and Alka&#39;s dorm room...-&gt;57]]</tw-passagedata><tw-passagedata pid="55" name="57" tags="" position="1350,8825" size="100,100">Alka opens the door and enters the room with quiet, considerate care, in case Carl is asleep - but instead he finds the lights on and Carl wrapped in their blanket like a burrito on the floor, playing a videogame on the TV.
 
 The blinds have been reopened and there is a stack of neatly folded laundry on Alka’s bed. Carl’s side of the room has been straightened up, too. The whole vibe in their dorm is different now.
 
@@ -1042,11 +1076,14 @@ ALKA: Okay.
 
 Alka comes over and sits with Carl, watching them play. A few moments later, Carl wordlessly slides the other game controller to Alka. Alka leans over and bumps shoulders with Carl playfully and picks up the controller.
 
-And as our friends start to play a new game together, [[we...-&gt;58]]</tw-passagedata><tw-passagedata pid="54" name="58" tags="" position="1350,8950" size="100,100">(align:&quot;=&gt;&lt;=&quot;)[&#39;&#39;FADE TO BLACK&#39;&#39;]
+And as our friends start to play a new game together, [[we...-&gt;58]]</tw-passagedata><tw-passagedata pid="56" name="58" tags="" position="1350,8950" size="100,100">&lt;!-- DB CODE START --&gt;
+(display: &quot;UpdateSheet&quot;)
+&lt;!-- DB CODE END --&gt;
+(align:&quot;=&gt;&lt;=&quot;)[&#39;&#39;FADE TO BLACK&#39;&#39;]
 
 (align:&quot;=&gt;&lt;=&quot;)[Thank you for playing this pilot of our game. After our discussion of the demo today, you can expect to recieve a short survey asking a few questions about your gaming experience. This survey is entirely confidential and the data it collects will be used only by the development team to improve the game. 
 
-Again, we really appreciate you taking the time to play this game and give us your feedback.]</tw-passagedata><tw-passagedata pid="55" name="6" tags="" position="575,1325" size="100,100">ALKA: Do you think the construction next door will end soon? I can’t keep waking up every day at seven a.m.
+Again, we really appreciate you taking the time to play this game and give us your feedback.]</tw-passagedata><tw-passagedata pid="57" name="6" tags="" position="575,1325" size="100,100">ALKA: Do you think the construction next door will end soon? I can’t keep waking up every day at seven a.m.
 
 CARL: Well, I don’t need to listen to you snoring.
 
@@ -1062,7 +1099,7 @@ CARL: Carl here.
 
 ALKA: Alka.
 
-Another student, Kevin, enters the [[aisle.-&gt;7]]</tw-passagedata><tw-passagedata pid="56" name="7" tags="" position="575,1450" size="100,100">KEVIN: ‘scuse me. Sorry
+Another student, Kevin, enters the [[aisle.-&gt;7]]</tw-passagedata><tw-passagedata pid="58" name="7" tags="" position="575,1450" size="100,100">KEVIN: ‘scuse me. Sorry
 
 He carefully gets to the seat to the left of Jenn and sits down.
 
@@ -1070,7 +1107,7 @@ JENN (text-colour:grey)[(to Kevin)]: Hi! I’m Jenn!
 
 Kevin offers a hand to shake.
 
-KEVIN: Kevin. Nice to meet [[you.-&gt;8]]</tw-passagedata><tw-passagedata pid="57" name="8" tags="" position="575,1575" size="100,100">Alka looks down at his phone, texting. Carl stops him.
+KEVIN: Kevin. Nice to meet [[you.-&gt;8]]</tw-passagedata><tw-passagedata pid="59" name="8" tags="" position="575,1575" size="100,100">Alka looks down at his phone, texting. Carl stops him.
 
 CARL: Dude if she’s not texting back, let it go!
 
@@ -1098,7 +1135,7 @@ JENN: Oh, you got dumped then.
 
 ALKA: Wait - what?!
 
-CARL: See, that’s what [[I told him--&gt;9]]</tw-passagedata><tw-passagedata pid="58" name="9" tags="" position="575,1700" size="100,100">Things are getting chaotic. Yinan holds out her bag of chips.
+CARL: See, that’s what [[I told him--&gt;9]]</tw-passagedata><tw-passagedata pid="60" name="9" tags="" position="575,1700" size="100,100">Things are getting chaotic. Yinan holds out her bag of chips.
 
 YINAN: Chips?
 
@@ -1147,7 +1184,7 @@ YINAN: -just kidding! Of course you can have more!
 
 ALKA: Ha, thanks!
 
-[[Next-&gt;10]]</tw-passagedata><tw-passagedata pid="59" name="GRP_C1A" tags="" position="1050,5450" size="100,100">Alka turns to Ilsi.
+[[Next-&gt;10]]</tw-passagedata><tw-passagedata pid="61" name="GRP-C1A" tags="" position="1050,5450" size="100,100">Alka turns to Ilsi.
 
 ALKA: We only have two weeks to build something. Let’s just do the ultrasonic sensor thing.
 
@@ -1161,7 +1198,7 @@ ILSI (not fully sold): It sounds kind of hard to play, but maybe it’ll be easi
 
 CARL: Okay, cool - let’s start designing it the next time we get together.
 
-[[A bit later at the NYU Makerspace...-&gt;36]]</tw-passagedata><tw-passagedata pid="60" name="GRP_C1B" tags="" position="1175,5450" size="100,100">Alka turns to Ilsi.
+[[A bit later at the NYU Makerspace...-&gt;36]]</tw-passagedata><tw-passagedata pid="62" name="GRP-C1B" tags="" position="1175,5450" size="100,100">Alka turns to Ilsi.
 
 ALKA: What do you think we should do instead?
 
@@ -1175,7 +1212,7 @@ ILSI: I just...(sighs) Okay, fine. Let’s go with the ultrasonic sensor. Maybe 
 
 CARL: Nice. Let’s start designing it when we get together next time.
 
-[[A bit later at the NYU Makerspace...-&gt;36]]</tw-passagedata><tw-passagedata pid="61" name="GRP_C2A" tags="" position="1050,5700" size="100,100">Alka turns to Yinan.
+[[A bit later at the NYU Makerspace...-&gt;36]]</tw-passagedata><tw-passagedata pid="63" name="GRP-C2A" tags="" position="1050,5700" size="100,100">Alka turns to Yinan.
 
 ALKA: I don’t think we want to get too crazy with designs. Let me play it for you.
 
@@ -1190,14 +1227,14 @@ Ilsi makes a face - she doesn’t like how this is playing out at all.
 
 YINAN: Sigh...fine. Let’s see how it works.
 
-[[Alka puts the prototype down.-&gt;37]]</tw-passagedata><tw-passagedata pid="62" name="GRP_C2B" tags="" position="1175,5700" size="100,100">Alka turns to Yinan.
+[[Alka puts the prototype down.-&gt;37]]</tw-passagedata><tw-passagedata pid="64" name="GRP-C2B" tags="" position="1175,5700" size="100,100">Alka turns to Yinan.
 
 ALKA: Maybe we can combine your ideas with what I built. Can I show you
 how it works?
 
 YINAN (brightening up): Okay, let’s see what you’ve got.
 
-[[Alka puts the prototype down.-&gt;37]]</tw-passagedata><tw-passagedata pid="63" name="GRP_C3A" tags="" position="1050,6200" size="100,100">ALKA: I’ll tell you in a sec, hold on.
+[[Alka puts the prototype down.-&gt;37]]</tw-passagedata><tw-passagedata pid="65" name="GRP-C3A" tags="" position="1050,6200" size="100,100">ALKA: I’ll tell you in a sec, hold on.
 
 He clicks the Block user button and shuts his laptop.
 
@@ -1207,7 +1244,7 @@ CARL (wincing): Ooh, I don’t know about that.
 
 ALKA (shrugs): They shouldn’t have messed with my code.
 
-[[In Yinan&#39;s dorm room...-&gt;40]]</tw-passagedata><tw-passagedata pid="64" name="GRP_C3B" tags="" position="1200,6200" size="100,100">ALKA: I’m blocking them.
+[[In Yinan&#39;s dorm room...-&gt;40]]</tw-passagedata><tw-passagedata pid="66" name="GRP-C3B" tags="" position="1200,6200" size="100,100">ALKA: I’m blocking them.
 
 CARL: Ooh, I don’t know about that, man.
 
@@ -1225,63 +1262,27 @@ CARL: I don’t know, dude. I think she wants to do a good job just like you do.
 
 ALKA: I guess...
 
-[[Later in the dorm room, Alka and Carl pore over Yinan&#39;s additions...-&gt;41]]</tw-passagedata><tw-passagedata pid="65" name="INTRO" tags="" position="425,575" size="100,100">&lt;!-- DB CODE START --&gt;
+[[Later in the dorm room, Alka and Carl pore over Yinan&#39;s additions...-&gt;41]]</tw-passagedata><tw-passagedata pid="67" name="INTRO" tags="" position="425,575" size="100,100">&lt;!-- DB CODE START --&gt;
 (set: $date to (current-date:))
 (set: $time to (current-time:))
+(set: $startTime to (current-time:))
 (set: $path to (history:))
 (if: $feedback is 0)[(set: $feedback to (a:))]
-
-&lt;script&gt;
-
-&lt;/script&gt;
 &lt;!-- DB CODE END --&gt;
 
-Thank you for testing this interactive narrative! 
+Thank you for testing this interactive story! 
 Your participation and feedback will help us make this a great game.
 
-&lt;!-- SAVE // LOAD 
-(if: (saved-games:) contains &quot;Save A&quot; )[
-  (set: _save to (saved-games:)&#39;s &quot;Save A&quot;)
-  (set: _sg to (saved-games:))
-  &lt;script&gt;
-  console.log(_save);
-  console.log(_sg);
-
-  &lt;/script&gt;
-  (if: $loadedOnce is false or $loadedOnce is 0)[
-    (set: $loadedOnce to true)
-    (load-game: &quot;Save A&quot;)
-  ]
-  Welcome back, (print: &quot;name&quot; of $playerData)!
-  
-  Would you like to (link: &quot;pick up where you left off&quot;)[] in the story?
-  &lt;!-- goto: last in path array
-  Or do you want to (link: &quot;start over&quot;)[
-    &lt;script&gt;
-    localStorage.clear(); //clears saves
-    location.reload(); //refreshes page (note: will erase story if using twine online editor)
-    &lt;/script&gt;
-  ]?
-]
-(else:)[
-  (set: $playerData to (dm: &quot;name&quot;, &quot;&quot;, &quot;netID&quot;, &quot;&quot;))
-  Please enter the following information:
-  Name: (input: bind $playerData&#39;s &quot;name&quot;, &quot;your name&quot;)
-  NetID: (input: bind $playerData&#39;s &quot;netID&quot;, &quot;your netID&quot;)
-
-]
---&gt;
-(set: $playerData to (dm: &quot;name&quot;, &quot;&quot;, &quot;netID&quot;, &quot;&quot;))
-  Please enter the following information:
-  Name: (input: bind $name, &quot;your name&quot;)
-  NetID: (input: bind $netID, &quot;your netID&quot;)
+Please enter the following information:
+Name: (input: bind $name, &quot;your name&quot;)
+NetID: (input: bind $netID, &quot;your netID&quot;)
 
 
 {
-There will be a feedback form you can fill out after 
+There will be a feedback form after 
 you read through these three scenarios,
-but you can also provide short feedback via the buttons 
-at the bottom of each page. These buttons are totally optional, but
+but you can also provide short feedback via the checkboxes 
+at the bottom of each page. These checkboxes are totally optional, but
 can be used for small notes that you don&#39;t want to forget, 
 or for general vibe checks that will automatically be linked 
 to that specific part of the story.
@@ -1289,8 +1290,8 @@ to that specific part of the story.
 
 {
 To go to the next page, or to choose between different paths 
-at branching points in the story, click the [[blue text -&gt;S0-ORIENTATION]].
-}</tw-passagedata><tw-passagedata pid="66" name="OFF_C1A" tags="" position="1350,7200" size="100,100">CARL: Oh, no - I think I’m good. Thanks, though.
+at branching points in the story, click the [[blue text-&gt;S0-ORIENTATION]].
+}</tw-passagedata><tw-passagedata pid="68" name="OFF-C1A" tags="" position="1350,7200" size="100,100">CARL: Oh, no - I think I’m good. Thanks, though.
 
 They start walking away from the turnstile and approach the booth for help, but when they get there they discover that it’s empty.
 
@@ -1310,19 +1311,19 @@ CARL: Actually...here I come. Thanks!
 
 LADY: You’re welcome!
 
-[[Inside the turnstile-&gt;48]]</tw-passagedata><tw-passagedata pid="67" name="OFF_C1B" tags="" position="1475,7200" size="100,100">CARL: Uhh...sure! Thank you so much!
+[[Inside the turnstile-&gt;48]]</tw-passagedata><tw-passagedata pid="69" name="OFF-C1B" tags="" position="1475,7200" size="100,100">CARL: Uhh...sure! Thank you so much!
 
 LADY: Of course, no problem!
 
 She lets Carl in through the gate.
 
-[[Inside the turnstile-&gt;48]]</tw-passagedata><tw-passagedata pid="68" name="OFF_C2A" tags="" position="1350,7950" size="100,100">Carl enters the class mid-lecture. The professor (female, 40s, white) interrupts what she’s saying and looks at us.
+[[Inside the turnstile-&gt;48]]</tw-passagedata><tw-passagedata pid="70" name="OFF-C2A" tags="" position="1350,7950" size="100,100">Carl enters the class mid-lecture. The professor (female, 40s, white) interrupts what she’s saying and looks at us.
 
 PROFESSOR: ...Therefore, the only stress that can be exerted on an object submerged in a static fluid is one that tends to compress the object from all sides- hi, Carl, good afternoon.
 
 CARL (a bit sheepish): Hi, sorry...
 
-Carl scans the room and spots Kevin gesturing to the empty seat next to him with his left hand. He sits [[down.-&gt;53]]</tw-passagedata><tw-passagedata pid="69" name="OFF_C2B" tags="" position="1475,8075" size="100,100">Carl&#39;s standing in front of the grill station at the university cafeteria, holding a tray with a plate of chicken tenders and onion rings.
+Carl scans the room and spots Kevin gesturing to the empty seat next to him with his left hand. He sits [[down.-&gt;53]]</tw-passagedata><tw-passagedata pid="71" name="OFF-C2B" tags="" position="1475,8075" size="100,100">Carl&#39;s standing in front of the grill station at the university cafeteria, holding a tray with a plate of chicken tenders and onion rings.
 
 GRILL STATION CASHIER: I need your ID, sir.
 
@@ -1375,7 +1376,7 @@ ALKA: Oh. Hm. Okay.
 
 CARL: Let’s just eat in our room.
 
-[[Back at the dorms...-&gt;54]]</tw-passagedata><tw-passagedata pid="70" name="OFF_C3A" tags="" position="1350,8325" size="100,100">Alka’s hand sets his plastic fork down.
+[[Back at the dorms...-&gt;54]]</tw-passagedata><tw-passagedata pid="72" name="OFF-C3A" tags="" position="1350,8325" size="100,100">Alka’s hand sets his plastic fork down.
 
 ALKA: Hey dude, I said, are you okay?
 
@@ -1383,14 +1384,14 @@ CARL: Yeah bro, I’m fine.
 
 ALKA: ....Word, okay.
 
-Alka picks up their fork to eat, but Carl abruptly gets up, leaving their food on the table, walks over and gets into his bed, pulling their blanket up over their [[head.-&gt;55]]</tw-passagedata><tw-passagedata pid="71" name="OFF_C3B" tags="" position="1475,8325" size="100,100">Alka’s hand spears food on his fork, but before he can take a bite, Carl gets up and
+Alka picks up their fork to eat, but Carl abruptly gets up, leaving their food on the table, walks over and gets into his bed, pulling their blanket up over their [[head.-&gt;55]]</tw-passagedata><tw-passagedata pid="73" name="OFF-C3B" tags="" position="1475,8325" size="100,100">Alka’s hand spears food on his fork, but before he can take a bite, Carl gets up and
 dumps their entire box of barely-eaten food into the trash can.
 
 ALKA (startled, setting fork down): You okay?
 
 CARL: Not hungry.
 
-We watch as Carl plops in bed and pulls their blanket up and over their entire body and head.</tw-passagedata><tw-passagedata pid="72" name="OFF_C4A" tags="" position="1350,8575" size="100,100">ALKA: Okay, something’s up. What’s going
+We watch as Carl plops in bed and pulls their blanket up and over their entire body and head.</tw-passagedata><tw-passagedata pid="74" name="OFF-C4A" tags="" position="1350,8575" size="100,100">ALKA: Okay, something’s up. What’s going
 on?
 
 CARL (from under blanket): I told you I’m fine.
@@ -1407,7 +1408,7 @@ ALKA: I’m gonna head to Dibner for a bit.
 
 CARL: K.
 
-Alka leaves the [[room.-&gt;56]]</tw-passagedata><tw-passagedata pid="73" name="OFF_C4B" tags="" position="1475,8575" size="100,100">ALKA: Hey, you don’t have to talk if you don’t want to...but just so you know, if you did want to talk, I’d be down.
+Alka leaves the [[room.-&gt;56]]</tw-passagedata><tw-passagedata pid="75" name="OFF-C4B" tags="" position="1475,8575" size="100,100">ALKA: Hey, you don’t have to talk if you don’t want to...but just so you know, if you did want to talk, I’d be down.
 
 CARL: Thanks. I think I’m good.
 
@@ -1419,7 +1420,7 @@ ALKA: I’m gonna head to Dibner for a bit.
 
 CARL: K.
 
-Alka leaves the [[room.-&gt;56]]</tw-passagedata><tw-passagedata pid="74" name="OPENING-CREDITS" tags="" position="575,2200" size="100,100">(align:&quot;=&gt;&lt;=&quot;)[&#39;&#39;DRAMATIS PERSONAE&#39;&#39;]
+Alka leaves the [[room.-&gt;56]]</tw-passagedata><tw-passagedata pid="76" name="OPENING-CREDITS" tags="" position="575,2200" size="100,100">(align:&quot;=&gt;&lt;=&quot;)[&#39;&#39;DRAMATIS PERSONAE&#39;&#39;]
 
 &#39;&#39;Core Characters&#39;&#39;
 
@@ -1457,58 +1458,16 @@ Male, 18, White-American
 PRAKESH
 Male, 52, Indian-American, Alka&#39;s dad
 
-[[ACT ONE-&gt;S1-TA]]</tw-passagedata><tw-passagedata pid="75" name="S0-ORIENTATION" tags="" position="575,575" size="100,100">&lt;!-- DB CODE START --&gt;
-&lt;!-- (set: $loadedOnce to false) --&gt;
-&lt;!--
-(if: (save-game: &quot;Save A&quot;))[
-  &lt;script&gt;
-  console.log(&quot;game saved successfully&quot;);
-  &lt;/script&gt;
-](else:)[
-  &lt;script&gt;
-  console.log(&quot;error in saving game&quot;);
-  &lt;/script&gt;
-]
---&gt;
-(set: $path to (history:))
-&lt;script&gt;
-console.log($path);
-console.log($name);
-console.log($netID);
-console.log($feedback);
-fetch(&#39;https://sheetdb.io/api/v1/czosjrv1cseoi?sheet=StudentLogs&#39;, {
-  method: &#39;POST&#39;,
-  headers: {
-    &#39;Accept&#39;: &#39;application/json&#39;,
-    &#39;Content-Type&#39;: &#39;application/json&#39;,
-    &#39;Authorization&#39;: &#39;Bearer jvf3oiwxqak11f8t15s21w64tq1f1s44ufu1ioin&#39;
-  },
-  body: JSON.stringify({
-    data: [
-      {
-        &#39;NETID&#39;: $netID,
-        &#39;NAME&#39;: $name,
-        &#39;DATE&#39;: $date,
-        &#39;TIME&#39;: $time,
-        &#39;PATH&#39;: $path,
-        &#39;FEEDBACK&#39;: $feedback
-      }
-    ]
-  })
-})
-  .then((response) =&gt; response.json())
-  .then((data) =&gt; console.log(data));
-
-&lt;/script&gt;
+[[ACT ONE-&gt;S1-TA]]</tw-passagedata><tw-passagedata pid="77" name="S0-ORIENTATION" tags="" position="575,575" size="100,100">&lt;!-- DB CODE START --&gt;
+(display: &quot;PostToSheet&quot;)
 &lt;!-- DB CODE END --&gt;
-
 
 We can hear the noisy bustle of an open area filled with people.
 
 Banners reading “WELCOME, NEW STUDENTS!” hang on every
 streetlight.
 
-Jenn is standing in front of an NYU Tandon building in the quad holding her phone, which seems to have lost connection: &quot;MAPS CAN&#39;T REACH THE INTERNET&quot;. She looks around listlessly, but [[then--&gt;1]]</tw-passagedata><tw-passagedata pid="76" name="S1-TA" tags="" position="800,2200" size="100,100">We are in a well-attended lab section with Yinan, Jenn, and Alka sitting together in the first row. Everyone has their laptops out and looks ready to go.
+Jenn is standing in front of an NYU Tandon building in the quad holding her phone, which seems to have lost connection: &quot;MAPS CAN&#39;T REACH THE INTERNET&quot;. She looks around listlessly, but [[then--&gt;1]]</tw-passagedata><tw-passagedata pid="78" name="S1-TA" tags="" position="800,2200" size="100,100">We are in a well-attended lab section with Yinan, Jenn, and Alka sitting together in the first row. Everyone has their laptops out and looks ready to go.
 
 Their teaching assistant, Josh, stands at a lectern at the front of the class. He has a laptop open on the lectern and there is a Powerpoint slide glowing on the
 smartboard behind him.
@@ -1519,8 +1478,11 @@ An arrow points to Josh and says: Josh, the TA. The lab’s exercise is written 
 
 (align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&#39;&#39;TODAY’S EXERCISE: WRITE A PROGRAM THAT SIMULATES THE MONTY HALL PROBLEM.&#39;&#39;]
 
-[[Next-&gt;13]]</tw-passagedata><tw-passagedata pid="77" name="S2-GROUPWORK" tags="" position="1050,4575" size="100,100">Outside Herald Square, Alka, wearing a backpack-style violin case slung one-strapped
-over his shoulder, walks briskly down the bustling avenue, lost in the thrumming rhythm of the city. He is FaceTiming with his father, Prakesh, on his iPhone. The connection is a little [[shaky.-&gt;30]]</tw-passagedata><tw-passagedata pid="78" name="S3-OFFCAMPUS" tags="" position="1350,6575" size="100,100">In Alka and Carl&#39;s dorm room, at Othmer Residence Hall, we see Alka and Carl eating silently at their little dorm table, the noiselessness broken only by the scrape of plastic utensils against take-out containers.
+[[Next-&gt;13]]</tw-passagedata><tw-passagedata pid="79" name="S2-GROUPWORK" tags="" position="1050,4575" size="100,100">&lt;!-- DB CODE START --&gt;
+(display: &quot;UpdateSheet&quot;)
+&lt;!-- DB CODE END --&gt;
+Outside Herald Square, Alka, wearing a backpack-style violin case slung one-strapped
+over his shoulder, walks briskly down the bustling avenue, lost in the thrumming rhythm of the city. He is FaceTiming with his father, Prakesh, on his iPhone. The connection is a little [[shaky.-&gt;30]]</tw-passagedata><tw-passagedata pid="80" name="S3-OFFCAMPUS" tags="" position="1350,6575" size="100,100">In Alka and Carl&#39;s dorm room, at Othmer Residence Hall, we see Alka and Carl eating silently at their little dorm table, the noiselessness broken only by the scrape of plastic utensils against take-out containers.
 
 Alka’s side of the room is spare, neat, and organized - even his rock band posters are framed and hanging perfectly straight. Carl’s side is more relaxed, slightly messy even - books here and there, a few crooked pictures surrounded by string lights, posters (The Wiz, The Fresh Prince, Dragon Ball Z, graffiti art) casually push-pinned to the wall...
 
@@ -1531,18 +1493,17 @@ ALKA: So...anything interesting happen today?
 Carl stays playing on their phone - it doesn’t seem like they
 heard him. Alka shrugs and goes back to eating.
 
-[[Earlier that week, in Central Park...-&gt;44]]</tw-passagedata><tw-passagedata pid="79" name="TA-C1a" tags="" position="800,2575" size="100,100">YINAN: Ohhhh - sorry. I don’t think switching doors would make a difference? And actually it’s &#39;&#39;Yi’nan&#39;&#39;.
+[[Earlier that week, in Central Park...-&gt;44]]</tw-passagedata><tw-passagedata pid="81" name="TA-C1a" tags="" position="800,2575" size="100,100">YINAN: Ohhhh - sorry. I don’t think switching doors would make a difference? And actually it’s &#39;&#39;Yi’nan&#39;&#39;.
 
 JOSH: That’s what I said.(text-colour:grey)[ (beat) ]But OK, we have one vote for switch and one for it doesn’t matter.
 
 Yinan frowns with a “wtf” face. Jenn and Alka watch her with a sympathetic expression.
 
-[[Next-&gt;TA-C1b]]</tw-passagedata><tw-passagedata pid="80" name="TA-C1b" tags="" position="925,2575" size="100,100">Recitation has ended, and Josh is packing up his laptop at the lectern. Students are gathering their things, talking and filing out, etc.
+[[Next-&gt;TA-C1b]]</tw-passagedata><tw-passagedata pid="82" name="TA-C1b" tags="" position="925,2575" size="100,100">Recitation has ended, and Josh is packing up his laptop at the lectern. Students are gathering their things, talking and filing out, etc.
 
 Jenn and Alka are leaving.
 
-JENN(text-colour:grey)[ (to Yinan)]: Hey, I booked a study room in the library. Do you wanna work on the
-homework with us?
+JENN(text-colour:grey)[ (to Yinan)]: Hey, I booked a study room in the library. Do you wanna work on the homework with us?
 
 YINAN: You guys go without me. I’ll catch up with you later. Jenn and Alka share a look.
 
@@ -1583,13 +1544,13 @@ Yinan does a double take.
 
 YINAN: Oh.
 
-(text-colour:grey)[(firmly) ]My name in America is still Yinan.
+(text-colour:grey)[(firmly)]My name in America is still Yinan.
 
 JOSH: Oh. Okay - Yi...nan.
 
 YINAN: Thank you.
 
-[[Next-&gt;15]]</tw-passagedata><tw-passagedata pid="81" name="TA-C2a" tags="" position="800,4200" size="100,100">ALANNA: What about your academic advisor?
+[[Next-&gt;15]]</tw-passagedata><tw-passagedata pid="83" name="TA-C2a" tags="" position="800,4200" size="100,100">ALANNA: What about your academic advisor?
 
 Yinan clearly hasn’t thought about that before.
 
@@ -1599,7 +1560,7 @@ ALANNA: The academic advisors are here to advocate for the students. I think if 
 
 YINAN: Thanks! That hadn’t crossed my mind at all.
 
-[[The next day...-&gt;27]]</tw-passagedata><tw-passagedata pid="82" name="TA-C2b" tags="" position="925,4200" size="100,100">ALANNA: The professor can be a really good resource. What do you think about talking to him?
+[[The next day...-&gt;27]]</tw-passagedata><tw-passagedata pid="84" name="TA-C2b" tags="" position="925,4200" size="100,100">ALANNA: The professor can be a really good resource. What do you think about talking to him?
 
 YINAN: I thought about that, but I don’t think I know him well enough to talk about my issue.
 
