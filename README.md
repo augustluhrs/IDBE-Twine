@@ -4,8 +4,8 @@ Repository of Twine source files for Tandon IDBE Game.
 
 ## Current Versions
 
-- *IDBE Game_Twine* is the story-only version of the first three scenarios.
-- *v2_Backend* is the above with the added sheet logging and feedback interface.
+- *IDBE Game_Twine* is the story-only version of the first three scenarios *(not in repo, in Drive)*
+- *index.html* and *v2_Backend.twee* are the above scenarios, proofread with the added sheet logging and feedback interface.
 
 ## TODO
 

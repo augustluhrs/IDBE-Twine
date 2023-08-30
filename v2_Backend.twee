@@ -72,6 +72,9 @@ IDBE Twine Test
     .then((data) => console.log(data));
 </script>
 
+:: Footer[footer]
+
+<!-- Test -->
 
 :: 1 {"position":"575,700","size":"100,100"}
 
@@ -81,7 +84,7 @@ JENN: Oh, thank you so much, yes! I’m looking for this place.
 
 Ilsi takes a look at the screen and smiles.
 
-ILSI (points at a building): I thought so. The new student event is in that building. Once you’re in, follow the signs and you’ll find the room.
+ILSI (text-color:grey)[(points at a building)]: I thought so. The new student event is in that building. Once you’re in, follow the signs and you’ll find the room.
 
 JENN: Thank you! What year are you in?
 
@@ -1305,9 +1308,12 @@ And as our friends start to play a new game together, [[we...->58]]
 
 
 :: 58 {"position":"1350,8950","size":"100,100"}
+{
 <!-- DB CODE START -->
 (display: "UpdateSheet")
 <!-- DB CODE END -->
+}
+
 (align:"=><=")[''FADE TO BLACK'']
 
 (align:"=><=")[Thank you for playing this pilot of our game. After our discussion of the demo today, you can expect to recieve a short survey asking a few questions about your gaming experience. This survey is entirely confidential and the data it collects will be used only by the development team to improve the game. 
@@ -1537,14 +1543,41 @@ ALKA: I guess...
 
 
 :: INTRO {"position":"425,575","size":"100,100"}
+{
 <!-- DB CODE START -->
 (set: $date to (current-date:))
 (set: $time to (current-time:))
 (set: $startTime to (current-time:))
 (set: $path to (history:))
 (if: $feedback is 0)[(set: $feedback to (a:))]
+<!-- Set up the feedback by going through all the passages and creating a new datamap -->
+<!-- (if: $feedback is 0)[ -->
+  <!-- (set: $feedback to (dm:)) -->
+  <!-- (set: $feedback to (a:)) -->
+  <!-- (set: _p to (passages:)) -->
+  <!-- (for: each _pass, ...(_p))[ -->
+    <!-- <script>console.log(_pass)</script> -->
+    <!-- (put: "asdf" into $feedback) -->
+    <!-- ] -->
+  <script>
+  // $feedback.set("name", 234);
+  // $feedback.push("name", 234);
+  // console.log($feedback);
+  // for(let p of _p){
+    // console.log(p.get('name'));
+    // let fb = {
+    //   'liked': 0,
+    //   'disliked': 0,
+    //   'confused': 0,
+    //   'notes': ""
+    // }
+    // $feedback.set(p.get('name'), fb);
+  // }
+  // console.log($feedback);
+  </script>
+<!-- ] -->
 <!-- DB CODE END -->
-
+}
 Thank you for testing this interactive story! 
 Your participation and feedback will help us make this a great game.
 
@@ -1770,9 +1803,11 @@ Male, 52, Indian-American, Alka's dad
 
 
 :: S0-ORIENTATION {"position":"575,575","size":"100,100"}
+{
 <!-- DB CODE START -->
 (display: "PostToSheet")
 <!-- DB CODE END -->
+}
 
 We can hear the noisy bustle of an open area filled with people.
 
@@ -1780,7 +1815,6 @@ Banners reading “WELCOME, NEW STUDENTS!” hang on every
 streetlight.
 
 Jenn is standing in front of an NYU Tandon building in the quad holding her phone, which seems to have lost connection: "MAPS CAN'T REACH THE INTERNET". She looks around listlessly, but [[then-->1]]
-
 
 :: S1-TA {"position":"800,2200","size":"100,100"}
 We are in a well-attended lab section with Yinan, Jenn, and Alka sitting together in the first row. Everyone has their laptops out and looks ready to go.
@@ -1798,9 +1832,12 @@ An arrow points to Josh and says: Josh, the TA. The lab’s exercise is written 
 
 
 :: S2-GROUPWORK {"position":"1050,4575","size":"100,100"}
+{
 <!-- DB CODE START -->
 (display: "UpdateSheet")
 <!-- DB CODE END -->
+}
+
 Outside Herald Square, Alka, wearing a backpack-style violin case slung one-strapped
 over his shoulder, walks briskly down the bustling avenue, lost in the thrumming rhythm of the city. He is FaceTiming with his father, Prakesh, on his iPhone. The connection is a little [[shaky.->30]]
 
