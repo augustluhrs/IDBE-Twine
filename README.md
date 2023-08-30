@@ -12,10 +12,9 @@ Repository of Twine source files for Tandon IDBE Game.
 - [X] Instructions for Readers at Start
 - [X] Name/NetID Capture
 - [X] Glitch Project Site Live
-- [ ] QR Code // Bit.ly
 - [X] Sheet Logging Player Path
-- [ ] Sheet Logging Passage Feedback
-- [ ] Feedback Buttons
+- [X] Sheet Logging Passage Feedback
+- [X] Feedback Buttons
 - [X] Send updates on first page, beginning of 2nd scenario, and on final page instead of every page (only 500 requests avail.)
 - [ ] Bearer token in glitch .env (is security overkill?)
 - [X] ~~Load Game at Start if Cookies Exist~~
