@@ -72,9 +72,32 @@ IDBE Twine Test
     .then((data) => console.log(data));
 </script>
 
-:: Footer[footer]
+:: UpdateFeedback
+<!-- won't work b/c temp variables don't exist in this passage -->
+<!-- (set: _feedback to (a: _liked, _disliked, _confused, _note))
+(set: _fb to (a: (passage:)'s name, _feedback))
+(set: $feedback to it + (a: _fb));
+<script>
+console.log($feedback)
+console.log(_liked)
+</script> -->
 
-<!-- Test -->
+:: Footer[footer]
+<p>
+<hr>
+(checkbox: bind _liked, "I really like this passage")
+(checkbox: bind _disliked, "I don't like this passage")
+(checkbox: bind _confused, "I'm confused")
+(checkbox: bind _other, "I have a short comment (write a note)")
+[(input-box: bind $comment)]<note|
+(live: 0.1s)[
+  (if: _other is true)[(show: ?note)]
+  (else:)[(hide: ?note)]
+]
+
+<script>
+// console.log(_other);
+</script>
 
 :: 1 {"position":"575,700","size":"100,100"}
 
@@ -1550,6 +1573,11 @@ ALKA: I guess...
 (set: $startTime to (current-time:))
 (set: $path to (history:))
 (if: $feedback is 0)[(set: $feedback to (a:))]
+<!-- (set: _fa to (a: 0, 1, 0, "asdfasd")) -->
+<!-- (set: _test to (a:(passage:)'s name, _fa)) -->
+<!-- (set: $feedback to it + (a: _test)) -->
+
+
 <!-- Set up the feedback by going through all the passages and creating a new datamap -->
 <!-- (if: $feedback is 0)[ -->
   <!-- (set: $feedback to (dm:)) -->
@@ -1560,20 +1588,7 @@ ALKA: I guess...
     <!-- (put: "asdf" into $feedback) -->
     <!-- ] -->
   <script>
-  // $feedback.set("name", 234);
-  // $feedback.push("name", 234);
-  // console.log($feedback);
-  // for(let p of _p){
-    // console.log(p.get('name'));
-    // let fb = {
-    //   'liked': 0,
-    //   'disliked': 0,
-    //   'confused': 0,
-    //   'notes': ""
-    // }
-    // $feedback.set(p.get('name'), fb);
-  // }
-  // console.log($feedback);
+  console.log($feedback);
   </script>
 <!-- ] -->
 <!-- DB CODE END -->
@@ -1599,6 +1614,34 @@ to that specific part of the story.
 {
 To go to the next page, or to choose between different paths 
 at branching points in the story, click the [[blue text->S0-ORIENTATION]].
+(link: "blue text")[
+  <!-- auto pointer issue so annoying https://intfiction.org/t/array-variables-are-pointers-vs-values-in-twine-harlowe/48887/3 -->
+  (set: _feedback to (a: 0, 0, 0, ""))
+  <!-- (if: _liked)[(set: _l to 1)]
+  (if: _disliked)[(set: _d to 1)]
+  (if: _confused)[(set: _c to 1)] -->
+  (if: _liked)[(set: _feedback's 1st to 1)]
+  (if: _disliked)[(set: _feedback's 2nd to 1)]
+  (if: _confused)[(set: _feedback's 3rd to 1)]
+  (set: _feedback's 4th to (str: $comment))
+
+  <!-- (set: _feedback to (a: ""+_l, ""+_d, ""+_c, ""+_note)) -->
+
+  <!-- (set: _feedback to (a: 1, 2, 1, "q345")) -->
+  <!-- (set: _feedback to (a: _liked, _disliked, _confused, _note)) -->
+  (set: _fb to (a: (passage:)'s name, _feedback))
+  (set: $feedback to it + (a: _fb))
+  <!-- (set: _fa to (a: 0, 1, 0, "asdfasd")) -->
+<!-- (set: _test to (a: (passage:)'s name, _fa)) -->
+<!-- (set: $feedback to it + (a: _test)) -->
+  <script>
+    console.log($feedback)
+    console.log(_feedback)
+    console.log(_other)
+    console.log($comment)
+  </script> 
+  (go-to: "S0-ORIENTATION")
+  ]
 }
 
 :: OFF-C1A {"position":"1350,7200","size":"100,100"}
@@ -1805,7 +1848,7 @@ Male, 52, Indian-American, Alka's dad
 :: S0-ORIENTATION {"position":"575,575","size":"100,100"}
 {
 <!-- DB CODE START -->
-(display: "PostToSheet")
+<!-- (display: "PostToSheet") -->
 <!-- DB CODE END -->
 }
 
